@@ -17,7 +17,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.lightGrey1,
-    fontSize: 60,
+    fontSize: 72,
   );
 
   // Title
@@ -25,7 +25,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
-    fontSize: 40,
+    fontSize: 64,
   );
 
   // Section Titles
@@ -60,10 +60,17 @@ class TextStyles {
   );
 
   // Main Text
-  static const paragraph1 = TextStyle(
+  static const paragraph = TextStyle(
     fontFamily: 'Calibre',
     color: AppColors.mediumGrey2,
-    fontSize: 17,
+    fontSize: 20,
+  );
+
+  // Main Text Highlighted
+  static const highlightParagraph = TextStyle(
+    fontFamily: 'Calibre',
+    color: AppColors.accentBlue,
+    fontSize: 20,
   );
 
   // Highlight Skills
@@ -100,7 +107,8 @@ class TextStyles {
     color: AppColors.accentBlue,
     fontSize: 16,
   );
-
+  
+  // Footer title
   static const footer = TextStyle(
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
