@@ -14,9 +14,9 @@ class PersonalWebsite extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        canvasColor: Colors.black,
+        canvasColor: AppColors.backgroundBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'SFMono',
+        fontFamily: 'Calibre',
       ),
       home: const Home(),
     );

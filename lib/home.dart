@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/sections/intro.dart';
+import 'package:personal_website/utils/theme.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -6,23 +8,17 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          Text(
-            'Calibre sample',
-            style: TextStyle(
-              fontFamily: 'Calibre',
-              color: Colors.white,
-            ),
-          ),
-          Text(
-            'SF Mono sample',
-            style: TextStyle(
-              fontFamily: 'SFMono',
-              color: Colors.white,
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        backgroundColor: AppColors.backgroundBlue,
+        actions: [],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Intro(),
+          ],
+        ),
       ),
     );
   }

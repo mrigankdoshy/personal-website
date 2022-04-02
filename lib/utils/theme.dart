@@ -7,7 +7,7 @@ class AppColors {
   static const mediumGrey1 = Color(0xFFAFBDD3);
   static const mediumGrey2 = Color(0xFF8391A6);
   static const darkGrey1 = Color(0xFF57657A);
-  static const accentBlue = Color(0xFFAAF5FF);
+  static const accentBlue = Color(0xFF80F0FF);
   static const backgroundBlue = Color(0xFF051021);
 }
 
@@ -106,5 +106,12 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
     fontSize: 36,
+  );
+
+  //  Greeting
+  static const greeting = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.accentBlue,
+    fontSize: 17,
   );
 }
