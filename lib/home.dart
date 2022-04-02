@@ -7,17 +7,23 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: AppColors.backgroundBlue,
         actions: [],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Intro(),
-          ],
+        child: Padding(
+          padding: EdgeInsets.only(left: width / 4.75, right: width / 4.75),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Intro(),
+            ],
+          ),
         ),
       ),
     );
