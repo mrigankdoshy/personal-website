@@ -33,15 +33,14 @@ class AboutMe extends StatelessWidget {
                     const SizedBox(height: 25.0),
                     _aboutMeParagraph4(),
                   ],
-                ),
+                )
               ],
             ),
           ),
-          const SizedBox(width: 80.0),
-          Image.asset(
-            'assets/me.jpg',
-            scale: ResponsiveWidget.isLargeScreen(context) ? 12 : 16,
+          SizedBox(
+            width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0,
           ),
+          _image(context),
         ],
       ),
     );
@@ -110,6 +109,38 @@ class AboutMe extends StatelessWidget {
       AboutMeData.recentTechTitle,
       style: TextStyles.paragraph,
       maxLines: 2,
+    );
+  }
+
+  Widget _image(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.only(top: 150.0),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: <Widget>[
+          Container(
+            height: width / 5.5,
+            width: width / 7.25,
+            decoration: BoxDecoration(
+              border: Border.all(color: AppColors.accentBlue, width: 3.0),
+              borderRadius: BorderRadius.circular(6),
+            ),
+          ),
+          Positioned(
+            top: -20,
+            bottom: 20,
+            right: 20,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/me.jpg',
+                scale: ResponsiveWidget.isLargeScreen(context) ? 12 : 16,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
