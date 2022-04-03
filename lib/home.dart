@@ -8,23 +8,20 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.backgroundBlue,
-      child: Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: AppColors.backgroundBlue,
-          actions: const [
-            // TODO: Add Section Buttons
-            // TODO: Add Resume Button
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: ResponsiveWidget(
-            largeScreen: _buildLargeScreen(context),
-            mediumScreen: _buildMediumScreen(context),
-            smallScreen: _buildSmallScreen(context),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.backgroundBlue,
+        actions: const [
+          // TODO: Add Section Buttons
+          // TODO: Add Resume Button
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: ResponsiveWidget(
+          largeScreen: _buildLargeScreen(context),
+          mediumScreen: _buildMediumScreen(context),
+          smallScreen: _buildSmallScreen(context),
         ),
       ),
     );
@@ -56,17 +53,10 @@ class Home extends StatelessWidget {
 
   Widget _buildContent() {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Flexible(
-          child: Column(
-            children: const <Widget>[
-              Intro(),
-            ],
-          ),
-        ),
+      children: const <Widget>[
+        Intro(),
       ],
     );
   }
