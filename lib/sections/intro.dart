@@ -27,47 +27,64 @@ class Intro extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const AutoSizeText(
-                  IntroData.greeting,
-                  style: TextStyles.greeting,
-                  maxLines: 1,
-                ),
+                _greeting(),
                 const SizedBox(height: 20.0),
-                const AutoSizeText(
-                  IntroData.name,
-                  style: TextStyles.headline1,
-                  maxLines: 1,
-                ),
-                const AutoSizeText(
-                  IntroData.title,
-                  style: TextStyles.headline2,
-                  maxLines: 1,
-                ),
+                _nameAndTitle(),
                 const SizedBox(height: 15.0),
-                AutoSizeText.rich(
-                  TextSpan(
-                    style: TextStyles.paragraph,
-                    children: <TextSpan>[
-                      const TextSpan(
-                        text: IntroData.about,
-                      ),
-                      TextSpan(
-                        text: SharedData.kcf,
-                        style: TextStyles.highlightParagraph,
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launch(Url.kcfTechnologies);
-                          },
-                      ),
-                    ],
-                  ),
-                  maxLines: 5,
-                ),
+                _about(),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _greeting() {
+    return const AutoSizeText(
+      IntroData.greeting,
+      style: TextStyles.greeting,
+      maxLines: 1,
+    );
+  }
+
+  Widget _nameAndTitle() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        AutoSizeText(
+          IntroData.name,
+          style: TextStyles.headline1,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          IntroData.title,
+          style: TextStyles.headline2,
+          maxLines: 1,
+        ),
+      ],
+    );
+  }
+
+  Widget _about() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
+        children: <TextSpan>[
+          const TextSpan(
+            text: IntroData.about,
+          ),
+          TextSpan(
+            text: SharedData.kcf,
+            style: TextStyles.highlightParagraph,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                launch(Url.kcfTechnologies);
+              },
+          ),
+        ],
+      ),
+      maxLines: 5,
     );
   }
 }
