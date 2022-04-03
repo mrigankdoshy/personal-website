@@ -14,16 +14,19 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        _sectionNumber(number),
-        const SizedBox(width: 20),
-        _sectionTitle(title),
-        const SizedBox(width: 20),
-        _line(context),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 32.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _sectionNumber(number),
+          const SizedBox(width: 20),
+          _sectionTitle(title),
+          const SizedBox(width: 20),
+          _line(context),
+        ],
+      ),
     );
   }
 

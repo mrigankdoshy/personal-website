@@ -28,7 +28,7 @@ class Intro extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 _greeting(),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 25.0),
                 _nameAndTitle(),
                 const SizedBox(height: 15.0),
                 _about(),

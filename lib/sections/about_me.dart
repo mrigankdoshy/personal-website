@@ -14,35 +14,37 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 32.0, bottom: 32.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Flexible(
-              child: Column(
-                children: <Widget>[
-                  const SectionTitle(number: "01.", title: "About me"),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      _aboutMeParagraph1(),
-                      const SizedBox(height: 25.0),
-                      _aboutMeParagraph2(),
-                      const SizedBox(height: 25.0),
-                      _aboutMeParagraph3(),
-                      const SizedBox(height: 25.0),
-                      _aboutMeParagraph4(),
-                    ],
-                  ),
-                ],
-              ),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Flexible(
+            child: Column(
+              children: <Widget>[
+                const SectionTitle(number: "01.", title: "About me"),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    _aboutMeParagraph1(),
+                    const SizedBox(height: 25.0),
+                    _aboutMeParagraph2(),
+                    const SizedBox(height: 25.0),
+                    _aboutMeParagraph3(),
+                    const SizedBox(height: 25.0),
+                    _aboutMeParagraph4(),
+                  ],
+                ),
+              ],
             ),
-            // Image.asset(
-            //   'assets/intro_background.png',
-            //   scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
-            // ),
-          ],
-        ));
+          ),
+          const SizedBox(width: 80.0),
+          Image.asset(
+            'assets/me.jpg',
+            scale: ResponsiveWidget.isLargeScreen(context) ? 12 : 16,
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _aboutMeParagraph1() {
