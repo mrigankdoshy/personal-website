@@ -14,8 +14,6 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,11 +22,7 @@ class SectionTitle extends StatelessWidget {
         const SizedBox(width: 20),
         _sectionTitle(title),
         const SizedBox(width: 20),
-        Container(
-          height: 1.0,
-          width: width / 5,
-          color: AppColors.mediumGrey2.withOpacity(0.5),
-        ),
+        _line(context),
       ],
     );
   }
@@ -49,6 +43,15 @@ class SectionTitle extends StatelessWidget {
       title,
       style: TextStyles.sectionTitle,
       maxLines: 1,
+    );
+  }
+
+  Widget _line(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      height: 1.0,
+      width: width / 5,
+      color: AppColors.mediumGrey2.withOpacity(0.5),
     );
   }
 }

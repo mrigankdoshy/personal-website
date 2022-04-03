@@ -16,7 +16,7 @@ class Intro extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           if (!ResponsiveWidget.isSmallScreen(context))
             Image.asset(
               'assets/intro_background.png',
@@ -26,7 +26,7 @@ class Intro extends StatelessWidget {
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 _greeting(),
                 const SizedBox(height: 20.0),
                 _nameAndTitle(),
