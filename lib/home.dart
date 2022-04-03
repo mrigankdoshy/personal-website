@@ -8,63 +8,66 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Material(
       color: AppColors.backgroundBlue,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: width / 4.75),
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: AppColors.backgroundBlue,
-            actions: const [
-              // TODO: Add Section Buttons
-              // TODO: Add Resume Button
-            ],
-          ),
-          body: LayoutBuilder(
-            builder: (context, constraints) {
-              return _buildBody(context, constraints);
-            },
-          ),
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: AppColors.backgroundBlue,
+          actions: const [
+            // TODO: Add Section Buttons
+            // TODO: Add Resume Button
+          ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildBody(BuildContext context, BoxConstraints constraints) {
-    return SingleChildScrollView(
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          minWidth: constraints.maxWidth,
-          minHeight: constraints.maxHeight,
-        ),
-        child: ResponsiveWidget(
-          largeScreen: _buildLargeScreen(context),
-          // mediumScreen: _buildMediumScreen(context),
-          // smallScreen: _buildSmallScreen(context),
+        body: SingleChildScrollView(
+          child: ResponsiveWidget(
+            largeScreen: _buildLargeScreen(context),
+            mediumScreen: _buildMediumScreen(context),
+            smallScreen: _buildSmallScreen(context),
+          ),
         ),
       ),
     );
   }
 
   Widget _buildLargeScreen(BuildContext context) {
-    return IntrinsicHeight(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: Column(
-              children: const <Widget>[
-                Intro(),
-              ],
-            ),
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: width / 4.75),
+      child: _buildContent(),
+    );
+  }
+
+  Widget _buildMediumScreen(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: width / 12),
+      child: _buildContent(),
+    );
+  }
+
+  Widget _buildSmallScreen(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: width / 16),
+      child: _buildContent(),
+    );
+  }
+
+  Widget _buildContent() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Flexible(
+          child: Column(
+            children: const <Widget>[
+              Intro(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
