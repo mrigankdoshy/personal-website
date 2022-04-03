@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/sections/about_me.dart';
 import 'package:personal_website/sections/intro.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
@@ -57,6 +58,7 @@ class Home extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: const <Widget>[
         Intro(),
+        AboutMe(),
       ],
     );
   }

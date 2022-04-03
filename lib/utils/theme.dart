@@ -33,7 +33,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.lightGrey1,
-    fontSize: 28,
+    fontSize: 30,
   );
 
   // Section Numbers
