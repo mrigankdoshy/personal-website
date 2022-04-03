@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/data/url.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Intro extends StatelessWidget {
@@ -15,11 +16,12 @@ class Intro extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/intro_background.png',
-            scale: 2.5,
-          ),
-          const SizedBox(width: 30),
+          if (!ResponsiveWidget.isSmallScreen(context))
+            Image.asset(
+              'assets/intro_background.png',
+              scale: 2.5,
+            ),
+          SizedBox(width: !ResponsiveWidget.isSmallScreen(context) ? 30 : 0),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
