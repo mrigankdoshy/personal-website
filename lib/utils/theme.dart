@@ -4,10 +4,11 @@ class AppColors {
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF000000);
   static const lightGrey1 = Color(0xFFE6F1FF);
+  static const lightGrey2 = Color(0xFFC1CDDB);
   static const mediumGrey1 = Color(0xFFAFBDD3);
   static const mediumGrey2 = Color(0xFF8391A6);
   static const darkGrey1 = Color(0xFF57657A);
-  static const accentBlue = Color(0xFF80F0FF);
+  static const blueAccent = Color(0xFF80F0FF);
   static const backgroundBlue = Color(0xFF051021);
 }
 
@@ -33,13 +34,13 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.lightGrey1,
-    fontSize: 28,
+    fontSize: 30,
   );
 
   // Section Numbers
   static const sectionNumber = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 20,
   );
 
@@ -55,7 +56,7 @@ class TextStyles {
   static const companyTitle = TextStyle(
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 20,
   );
 
@@ -69,21 +70,21 @@ class TextStyles {
   // Main Text Highlighted
   static const highlightParagraph = TextStyle(
     fontFamily: 'Calibre',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 20,
   );
 
   // Highlight Skills
   static const highlightSkill = TextStyle(
     fontFamily: 'Calibre',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 17,
   );
 
   // Skills
   static const skill = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.lightGrey1,
+    color: AppColors.lightGrey2,
     fontSize: 15,
   );
 
@@ -97,17 +98,17 @@ class TextStyles {
   // Navigation Bar Button Number
   static const navBarButtonNumber = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 15,
   );
 
   //  Button Text
   static const buttonText = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 16,
   );
-  
+
   // Footer title
   static const footer = TextStyle(
     fontFamily: 'Calibre',
@@ -119,7 +120,7 @@ class TextStyles {
   //  Greeting
   static const greeting = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.accentBlue,
+    color: AppColors.blueAccent,
     fontSize: 17,
   );
 }

@@ -13,10 +13,10 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           if (!ResponsiveWidget.isSmallScreen(context))
             Image.asset(
               'assets/intro_background.png',
@@ -26,48 +26,65 @@ class Intro extends StatelessWidget {
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const AutoSizeText(
-                  IntroData.greeting,
-                  style: TextStyles.greeting,
-                  maxLines: 1,
-                ),
-                const SizedBox(height: 20.0),
-                const AutoSizeText(
-                  IntroData.name,
-                  style: TextStyles.headline1,
-                  maxLines: 1,
-                ),
-                const AutoSizeText(
-                  IntroData.title,
-                  style: TextStyles.headline2,
-                  maxLines: 1,
-                ),
+              children: <Widget>[
+                _greeting(),
+                const SizedBox(height: 25.0),
+                _nameAndTitle(),
                 const SizedBox(height: 15.0),
-                AutoSizeText.rich(
-                  TextSpan(
-                    style: TextStyles.paragraph,
-                    children: <TextSpan>[
-                      const TextSpan(
-                        text: IntroData.about,
-                      ),
-                      TextSpan(
-                        text: SharedData.kcf,
-                        style: TextStyles.highlightParagraph,
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launch(Url.kcfTechnologies);
-                          },
-                      ),
-                    ],
-                  ),
-                  maxLines: 5,
-                ),
+                _about(),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _greeting() {
+    return const AutoSizeText(
+      IntroData.greeting,
+      style: TextStyles.greeting,
+      maxLines: 1,
+    );
+  }
+
+  Widget _nameAndTitle() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        AutoSizeText(
+          IntroData.name,
+          style: TextStyles.headline1,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          IntroData.title,
+          style: TextStyles.headline2,
+          maxLines: 1,
+        ),
+      ],
+    );
+  }
+
+  Widget _about() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
+        children: <TextSpan>[
+          const TextSpan(
+            text: IntroData.about,
+          ),
+          TextSpan(
+            text: SharedData.kcf,
+            style: TextStyles.highlightParagraph,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                launch(Url.kcfTechnologies);
+              },
+          ),
+        ],
+      ),
+      maxLines: 5,
     );
   }
 }
