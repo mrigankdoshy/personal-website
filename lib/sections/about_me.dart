@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/recent_tech.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,6 +33,8 @@ class AboutMe extends StatelessWidget {
                     _aboutMeParagraph3(),
                     const SizedBox(height: 25.0),
                     _aboutMeParagraph4(),
+                    const SizedBox(height: 25.0),
+                    _recentTech()
                   ],
                 )
               ],
@@ -112,6 +115,32 @@ class AboutMe extends StatelessWidget {
     );
   }
 
+  Widget _recentTech() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const <Widget>[
+            RecentTech(title: "React"),
+            RecentTech(title: "TypeScript"),
+            RecentTech(title: "CSS"),
+          ],
+        ),
+        const SizedBox(width: 100.0),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const <Widget>[
+            RecentTech(title: "Flutter"),
+            RecentTech(title: "Firebase"),
+            RecentTech(title: "C#"),
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget _image(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
@@ -123,7 +152,7 @@ class AboutMe extends StatelessWidget {
             height: width / 5.5,
             width: width / 7.25,
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.accentBlue, width: 3.0),
+              border: Border.all(color: AppColors.blueAccent, width: 3.0),
               borderRadius: BorderRadius.circular(6),
             ),
           ),
