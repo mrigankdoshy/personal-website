@@ -19,11 +19,11 @@ class Mule extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const WorkTitle(
-          title: "${WorkData.softwareEngineer} - ${WorkData.capstone}",
-          company: WorkData.volvo,
-          url: Url.volvo,
+          title: "${WorkData.cofounder} and ${WorkData.softwareEngineer}",
+          company: WorkData.mule,
+          url: Url.mule,
         ),
-        const DateRange(start: VolvoData.startDate, end: VolvoData.endDate),
+        const DateRange(start: MuleData.startDate, end: MuleData.endDate),
         const SizedBox(height: 8.0),
         _point1(),
         _point2(),

@@ -94,7 +94,7 @@ class VolvoData {
 
 class MuleData {
   static const startDate = "May 2019";
-  static const endData = "July 2021";
+  static const endDate = "July 2021";
 
   static const point1Part1 = "Developed an ";
   static const point1Part2 = " and ";
