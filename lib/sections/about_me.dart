@@ -32,7 +32,10 @@ class AboutMe extends StatelessWidget {
     return Flexible(
       child: Column(
         children: <Widget>[
-          const SectionTitle(number: "01.", title: "About me"),
+          const SectionTitle(
+            number: SectionTitleData.sectionNumber1,
+            title: SectionTitleData.section1Title,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/sections/about_me.dart';
 import 'package:personal_website/sections/intro.dart';
-import 'package:personal_website/sections/work.dart';
+import 'package:personal_website/sections/work/work.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 

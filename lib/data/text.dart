@@ -1,3 +1,13 @@
+class SectionTitleData {
+  static const sectionNumber1 = "01.";
+  static const sectionNumber2 = "02.";
+  static const sectionNumber3 = "03.";
+
+  static const section1Title = "About me";
+  static const section2Title = "Where I've worked";
+  static const section3Title = "Some things I've built";
+}
+
 class IntroData {
   static const greeting = "Hey there, I'm";
   static const name = "Mrigank Doshy";
