@@ -13,7 +13,7 @@ class AboutMeData {
 
   static const secondParagraphPart1 = "I'm a recent graduate from ";
   static const secondParagraphPart2 =
-      "with a double major in Computer Science and Mathematics. Since 2018, I've been exploring the different applications of blockchain and engaging myself in a FinTech environment.";
+      " with a double major in Computer Science and Mathematics. Since 2018, I've been exploring the different applications of blockchain and engaging myself in a FinTech environment.";
 
   static const thirdParagraph =
       "I tend to approach things from a physics framework and love solving unusual and complex problems. When not working with technology, I can be found creating music or binge watching movies and shows.";
