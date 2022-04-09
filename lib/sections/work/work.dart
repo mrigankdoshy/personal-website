@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/sections/work/kcf_technologies.dart';
+import 'package:personal_website/sections/work/mule.dart';
 import 'package:personal_website/sections/work/volvo.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
@@ -27,6 +28,8 @@ class Work extends StatelessWidget {
           KcfTechnologies(),
           SizedBox(height: 32.0),
           Volvo(),
+          SizedBox(height: 32.0),
+          Mule(),
         ],
       ),
     );

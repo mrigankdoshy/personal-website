@@ -92,6 +92,31 @@ class VolvoData {
   static const project = "project";
 }
 
+class MuleData {
+  static const startDate = "May 2019";
+  static const endData = "July 2021";
+
+  static const point1Part1 = "Developed an ";
+  static const point1Part2 = " and ";
+  static const point1Part3 = " app using ";
+  static const point1Part4 =
+      " that allows students to be one another's delivers by helping them effectively manage their time with complete autonomy";
+
+  static const point2Part1 =
+      "Researched, designed and developed the UI/UX with ";
+  static const point2Part2 = " state-management library, ";
+  static const point2Part3 = " on the backend and real-time database using ";
+
+  static const point3Part1 =
+      "Implemented geolocation and routing with a cluster map of places and user locations using ";
+  static const point3Part2 = " and a notifications system using ";
+
+  static const point4Part1 =
+      "Built a registration and authentication system using ";
+  static const point4Part2 =
+      " (http client package) and applied dependency injection in the client to request for and match with other users";
+}
+
 class TechData {
   static const react = "React";
   static const css = "CSS";
