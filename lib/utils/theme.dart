@@ -49,7 +49,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
-    fontSize: 20,
+    fontSize: 24,
   );
 
   // Company Title
@@ -57,7 +57,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.blueAccent,
-    fontSize: 20,
+    fontSize: 24,
   );
 
   // Main Text
@@ -122,5 +122,12 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.blueAccent,
     fontSize: 17,
+  );
+
+  //  Date
+  static const date = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.darkGrey1,
+    fontSize: 15,
   );
 }

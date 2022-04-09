@@ -22,6 +22,11 @@ class AboutMeData {
       "Here are a few technologies I've been working with recently:";
 }
 
+class KcfTechData {
+  static const startDate = "August 2021";
+  static const endDate = "Present";
+}
+
 class SharedData {
   // Companies
   static const kcf = "KCF Technologies";

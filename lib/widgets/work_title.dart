@@ -23,6 +23,7 @@ class WorkTitle extends StatelessWidget {
         style: TextStyles.jobTitle,
         children: <TextSpan>[
           TextSpan(text: title),
+          const TextSpan(text: " "),
           TextSpan(
             text: "@ $company",
             style: TextStyles.companyTitle,

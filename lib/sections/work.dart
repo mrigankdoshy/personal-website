@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
+import 'package:personal_website/widgets/date.dart';
 import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/work_title.dart';
 
@@ -24,12 +25,15 @@ class Work extends StatelessWidget {
 
   Widget _kcfTech() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: const <Widget>[
         WorkTitle(
-          title: "Software Engineer",
+          title: SharedData.softwareEngineer,
           company: SharedData.kcf,
           url: Url.kcfTechnologies,
-        )
+        ),
+        Date(start: KcfTechData.startDate, end: KcfTechData.endDate),
       ],
     );
   }
