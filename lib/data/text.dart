@@ -7,27 +7,22 @@ class IntroData {
 }
 
 class AboutMeData {
-  static const firstParagraphPart1 =
+  static const paragraph1Part1 =
       "After about four years of trying out different things, I have come to realize that I'm really good at two things: building products and getting them out into the world. Most recently, I co-founded and developed ";
-  static const firstParagraphPart2 = ", and have grown it to over 100 users.";
+  static const paragraph1Part2 = ", and have grown it to over 100 users.";
 
-  static const secondParagraphPart1 = "I'm a recent graduate from ";
-  static const secondParagraphPart2 =
+  static const paragraph2Part1 = "I'm a recent graduate from ";
+  static const paragraph2Part2 =
       " with a double major in Computer Science and Mathematics. Since 2018, I've been exploring the different applications of blockchain and engaging myself in a FinTech environment.";
 
-  static const thirdParagraph =
+  static const paragraph3 =
       "I tend to approach things from a physics framework and love solving unusual and complex problems. When not working with technology, I can be found creating music or binge watching movies and shows.";
 
-  static const recentTechTitle =
+  static const paragraph4 =
       "Here are a few technologies I've been working with recently:";
 }
 
-class KcfTechData {
-  static const startDate = "August 2021";
-  static const endDate = "Present";
-}
-
-class SharedData {
+class WorkData {
   // Companies
   static const kcf = "KCF Technologies";
   static const mule = "Mule";
@@ -38,4 +33,50 @@ class SharedData {
   static const softwareEngineer = "Software Engineer";
   static const capstone = "Capstone Project";
   static const cofounder = "Co-Founder";
+}
+
+class KcfTechData {
+  static const startDate = "August 2021";
+  static const endDate = "Present";
+
+  static const point1Part1 =
+      "Develop and maintain major features of KCF's mobile-first comprehensive machine health web app using ";
+  static const point1Part2 = ", ";
+  static const point1Part3 = " / ";
+  static const point1Part4 = " and ";
+
+  static const point2Part1 = "Build custom ";
+  static const point2Part2 =
+      ", UI elements and hooks for various pages, modals and tables throughout the software";
+
+  static const point3Part1 = "Implement and create ";
+  static const point3Part2 = " using ";
+  static const point3Part3 = " and ";
+  static const point3Part4 =
+      " to get, update and export multiple hardware's information";
+
+  static const point4 =
+      "Communicate and collaborate with multi-disciplinary teams of engineers, designers and product managers to ensure thoughtful and coherent user experiences";
+}
+
+class TechData {
+  static const react = "React";
+  static const css = "CSS";
+  static const sass = "Sass";
+  static const csharp = "C#";
+  static const styledComponents = "Styled Components";
+  static const restfulApi = "RESTful APIs";
+  static const entityFramework = "Entity Framework";
+  static const dapper = "Dapper";
+  static const creopyson = "Creopyson";
+  static const creoParametric = "CREO: Parametric";
+  static const flutter = "Flutter";
+  static const mobX = "MobX";
+  static const nodeJs = "Node.js";
+  static const mongoDb = "MongoDB";
+  static const googleMapsWebServices = "Google Maps Web Services";
+  static const firebaseMessaging = "Firebase Messaging";
+  static const dio = "Dio";
+  static const ios = "iOS";
+  static const android = "Android";
 }

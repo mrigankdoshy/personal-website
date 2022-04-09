@@ -64,28 +64,21 @@ class TextStyles {
   static const paragraph = TextStyle(
     fontFamily: 'Calibre',
     color: AppColors.mediumGrey2,
-    fontSize: 20,
+    fontSize: 19,
   );
 
   // Main Text Highlighted
   static const highlightParagraph = TextStyle(
     fontFamily: 'Calibre',
     color: AppColors.blueAccent,
-    fontSize: 20,
-  );
-
-  // Highlight Skills
-  static const highlightSkill = TextStyle(
-    fontFamily: 'Calibre',
-    color: AppColors.blueAccent,
-    fontSize: 17,
+    fontSize: 19,
   );
 
   // Skills
   static const skill = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.lightGrey2,
-    fontSize: 15,
+    fontSize: 14,
   );
 
   // Navigation Bar Button Text

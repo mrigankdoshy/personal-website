@@ -77,7 +77,7 @@ class Intro extends StatelessWidget {
             text: IntroData.about,
           ),
           TextSpan(
-            text: SharedData.kcf,
+            text: WorkData.kcf,
             style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {

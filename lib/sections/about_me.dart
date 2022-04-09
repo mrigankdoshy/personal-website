@@ -58,10 +58,10 @@ class AboutMe extends StatelessWidget {
         style: TextStyles.paragraph,
         children: <TextSpan>[
           const TextSpan(
-            text: AboutMeData.firstParagraphPart1,
+            text: AboutMeData.paragraph1Part1,
           ),
           TextSpan(
-            text: SharedData.mule,
+            text: WorkData.mule,
             style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
@@ -69,7 +69,7 @@ class AboutMe extends StatelessWidget {
               },
           ),
           const TextSpan(
-            text: AboutMeData.firstParagraphPart2,
+            text: AboutMeData.paragraph1Part2,
           ),
         ],
       ),
@@ -83,10 +83,10 @@ class AboutMe extends StatelessWidget {
         style: TextStyles.paragraph,
         children: <TextSpan>[
           const TextSpan(
-            text: AboutMeData.secondParagraphPart1,
+            text: AboutMeData.paragraph2Part1,
           ),
           TextSpan(
-            text: SharedData.pennState,
+            text: WorkData.pennState,
             style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
@@ -94,7 +94,7 @@ class AboutMe extends StatelessWidget {
               },
           ),
           const TextSpan(
-            text: AboutMeData.secondParagraphPart2,
+            text: AboutMeData.paragraph2Part2,
           ),
         ],
       ),
@@ -104,7 +104,7 @@ class AboutMe extends StatelessWidget {
 
   Widget _aboutMeParagraph3() {
     return const AutoSizeText(
-      AboutMeData.thirdParagraph,
+      AboutMeData.paragraph3,
       style: TextStyles.paragraph,
       maxLines: 5,
     );
@@ -112,7 +112,7 @@ class AboutMe extends StatelessWidget {
 
   Widget _aboutMeParagraph4() {
     return const AutoSizeText(
-      AboutMeData.recentTechTitle,
+      AboutMeData.paragraph4,
       style: TextStyles.paragraph,
       maxLines: 2,
     );
