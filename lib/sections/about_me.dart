@@ -19,31 +19,34 @@ class AboutMe extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Flexible(
-            child: Column(
-              children: <Widget>[
-                const SectionTitle(number: "01.", title: "About me"),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    _aboutMeParagraph1(),
-                    const SizedBox(height: 25.0),
-                    _aboutMeParagraph2(),
-                    const SizedBox(height: 25.0),
-                    _aboutMeParagraph3(),
-                    const SizedBox(height: 25.0),
-                    _aboutMeParagraph4(),
-                    const SizedBox(height: 25.0),
-                    _recentTech(context)
-                  ],
-                )
-              ],
-            ),
-          ),
+          _aboutMe(context),
           SizedBox(
-            width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0,
-          ),
+              width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
           _image(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _aboutMe(BuildContext context) {
+    return Flexible(
+      child: Column(
+        children: <Widget>[
+          const SectionTitle(number: "01.", title: "About me"),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              _aboutMeParagraph1(),
+              const SizedBox(height: 25.0),
+              _aboutMeParagraph2(),
+              const SizedBox(height: 25.0),
+              _aboutMeParagraph3(),
+              const SizedBox(height: 25.0),
+              _aboutMeParagraph4(),
+              const SizedBox(height: 25.0),
+              _recentTech(context)
+            ],
+          ),
         ],
       ),
     );
