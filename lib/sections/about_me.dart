@@ -34,7 +34,7 @@ class AboutMe extends StatelessWidget {
                     const SizedBox(height: 25.0),
                     _aboutMeParagraph4(),
                     const SizedBox(height: 25.0),
-                    _recentTech()
+                    _recentTech(context)
                   ],
                 )
               ],
@@ -115,7 +115,7 @@ class AboutMe extends StatelessWidget {
     );
   }
 
-  Widget _recentTech() {
+  Widget _recentTech(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +128,8 @@ class AboutMe extends StatelessWidget {
             RecentTech(title: "CSS"),
           ],
         ),
-        const SizedBox(width: 100.0),
+        SizedBox(
+            width: !ResponsiveWidget.isSmallScreen(context) ? 100.0 : 60.0),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[

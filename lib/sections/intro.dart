@@ -30,7 +30,6 @@ class Intro extends StatelessWidget {
                 _greeting(),
                 const SizedBox(height: 25.0),
                 _nameAndTitle(),
-                const SizedBox(height: 15.0),
                 _about(),
               ],
             ),
@@ -51,16 +50,19 @@ class Intro extends StatelessWidget {
   Widget _nameAndTitle() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        AutoSizeText(
+      children: [
+        const AutoSizeText(
           IntroData.name,
           style: TextStyles.headline1,
           maxLines: 1,
         ),
-        AutoSizeText(
-          IntroData.title,
-          style: TextStyles.headline2,
-          maxLines: 1,
+        Container(
+          transform: Matrix4.translationValues(0.0, -12.0, 0.0),
+          child: const AutoSizeText(
+            IntroData.title,
+            style: TextStyles.headline2,
+            maxLines: 1,
+          ),
         ),
       ],
     );

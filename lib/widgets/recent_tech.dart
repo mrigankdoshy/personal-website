@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/bullet.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 
 class RecentTech extends StatelessWidget {
   final String title;
@@ -22,6 +23,7 @@ class RecentTech extends StatelessWidget {
           AutoSizeText(
             title,
             style: TextStyles.skill,
+            maxFontSize: !ResponsiveWidget.isSmallScreen(context) ? 15.0 : 13.0,
             maxLines: 1,
           ),
         ],
