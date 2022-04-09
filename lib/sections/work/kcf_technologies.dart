@@ -23,7 +23,7 @@ class KcfTechnologies extends StatelessWidget {
           company: WorkData.kcf,
           url: Url.kcfTechnologies,
         ),
-        const DateRange(start: KcfTechData.startDate, end: KcfTechData.endDate),
+        const DateRange(start: KcfData.startDate, end: KcfData.endDate),
         const SizedBox(height: 8.0),
         _point1(),
         _point2(),
@@ -39,7 +39,7 @@ class KcfTechnologies extends StatelessWidget {
         TextSpan(
           style: TextStyles.point,
           children: <TextSpan>[
-            const TextSpan(text: KcfTechData.point1Part1),
+            const TextSpan(text: KcfData.point1Part1),
             TextSpan(
               text: TechData.react,
               style: TextStyles.highlightSkill,
@@ -48,7 +48,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.react);
                 },
             ),
-            const TextSpan(text: KcfTechData.point1Part2),
+            const TextSpan(text: KcfData.point1Part2),
             TextSpan(
               text: TechData.css,
               style: TextStyles.highlightSkill,
@@ -57,7 +57,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.css);
                 },
             ),
-            const TextSpan(text: KcfTechData.point1Part3),
+            const TextSpan(text: KcfData.point1Part3),
             TextSpan(
               text: TechData.sass,
               style: TextStyles.highlightSkill,
@@ -66,7 +66,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.sass);
                 },
             ),
-            const TextSpan(text: KcfTechData.point1Part4),
+            const TextSpan(text: KcfData.point1Part4),
             TextSpan(
               text: TechData.csharp,
               style: TextStyles.highlightSkill,
@@ -88,7 +88,7 @@ class KcfTechnologies extends StatelessWidget {
         TextSpan(
           style: TextStyles.point,
           children: <TextSpan>[
-            const TextSpan(text: KcfTechData.point2Part1),
+            const TextSpan(text: KcfData.point2Part1),
             TextSpan(
               text: TechData.styledComponents,
               style: TextStyles.highlightSkill,
@@ -97,7 +97,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.styledComponents);
                 },
             ),
-            const TextSpan(text: KcfTechData.point2Part2),
+            const TextSpan(text: KcfData.point2Part2),
           ],
         ),
         maxLines: 3,
@@ -111,7 +111,7 @@ class KcfTechnologies extends StatelessWidget {
         TextSpan(
           style: TextStyles.point,
           children: <TextSpan>[
-            const TextSpan(text: KcfTechData.point3Part1),
+            const TextSpan(text: KcfData.point3Part1),
             TextSpan(
               text: TechData.restfulApi,
               style: TextStyles.highlightSkill,
@@ -120,7 +120,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.restfulApi);
                 },
             ),
-            const TextSpan(text: KcfTechData.point3Part2),
+            const TextSpan(text: KcfData.point3Part2),
             TextSpan(
               text: TechData.entityFramework,
               style: TextStyles.highlightSkill,
@@ -129,7 +129,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.entityFramework);
                 },
             ),
-            const TextSpan(text: KcfTechData.point3Part3),
+            const TextSpan(text: KcfData.point3Part3),
             TextSpan(
               text: TechData.dapper,
               style: TextStyles.highlightSkill,
@@ -138,7 +138,7 @@ class KcfTechnologies extends StatelessWidget {
                   launch(Url.dapper);
                 },
             ),
-            const TextSpan(text: KcfTechData.point3Part4),
+            const TextSpan(text: KcfData.point3Part4),
           ],
         ),
         maxLines: 3,
@@ -149,7 +149,7 @@ class KcfTechnologies extends StatelessWidget {
   Widget _point4() {
     return const WorkPoint(
       data: AutoSizeText(
-        KcfTechData.point4,
+        KcfData.point4,
         style: TextStyles.point,
         maxLines: 4,
       ),

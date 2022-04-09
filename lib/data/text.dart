@@ -45,7 +45,7 @@ class WorkData {
   static const cofounder = "Co-Founder";
 }
 
-class KcfTechData {
+class KcfData {
   static const startDate = "August 2021";
   static const endDate = "Present";
 
@@ -67,6 +67,29 @@ class KcfTechData {
 
   static const point4 =
       "Communicate and collaborate with multi-disciplinary teams of engineers, designers and product managers to ensure thoughtful and coherent user experiences";
+}
+
+class VolvoData {
+  static const startDate = "January 2021";
+  static const endDate = "May 2021";
+
+  static const point1Part1 = "Explored an automated link using ";
+  static const point1Part2 =
+      " Python library, to convert 2D schematics to 3D CAD Models in ";
+  static const point1Part3 =
+      ", eliminating the need to manually rebuild a 3D model for any change in the 2D schematic";
+
+  static const point2 =
+      "Designed and developed an algorithm that suggests a network path for cables and fuel lines based on space boundary available and different environmental conditions";
+
+  static const point3 =
+      "Helped engineers reroute cables so that the wires take the most efficient paths, hence reducing the repetitive and time consuming process currently employed";
+
+  static const point4Part1 = "The ";
+  static const point4Part2 =
+      " is now being implemented in the Volvo System by an internal team";
+
+  static const project = "project";
 }
 
 class TechData {
