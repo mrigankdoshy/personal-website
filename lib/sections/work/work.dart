@@ -18,12 +18,12 @@ class Work extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const SectionTitle(
+        children: const <Widget>[
+          SectionTitle(
             number: SectionTitleData.sectionNumber2,
             title: SectionTitleData.section2Title,
           ),
-          kcfTech(),
+          KcfTechnologies(),
         ],
       ),
     );

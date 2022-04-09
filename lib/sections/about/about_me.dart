@@ -14,21 +14,6 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 64.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          _aboutMe(context),
-          SizedBox(
-              width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
-          _image(context),
-        ],
-      ),
-    );
-  }
-
-  Widget _aboutMe(BuildContext context) {
     return Flexible(
       child: Column(
         children: <Widget>[
@@ -145,38 +130,6 @@ class AboutMe extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-
-  Widget _image(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.only(top: 150.0),
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: <Widget>[
-          Container(
-            height: width / 5.5,
-            width: width / 7.25,
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.blueAccent, width: 3.0),
-              borderRadius: BorderRadius.circular(6),
-            ),
-          ),
-          Positioned(
-            top: -20,
-            bottom: 20,
-            right: 20,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Image.asset(
-                'assets/me.jpg',
-                scale: ResponsiveWidget.isLargeScreen(context) ? 12 : 16,
-              ),
-            ),
-          )
-        ],
-      ),
     );
   }
 }
