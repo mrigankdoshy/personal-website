@@ -23,7 +23,14 @@ class AboutMeData {
 }
 
 class SharedData {
+  // Companies
   static const kcf = "KCF Technologies";
   static const mule = "Mule";
   static const pennState = "Penn State";
+  static const volvo = "Volvo";
+
+  // Titles
+  static const softwareEngineer = "Software Engineer";
+  static const capstone = "Capstone Project";
+  static const cofounder = "Co-Founder";
 }

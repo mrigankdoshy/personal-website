@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/work_title.dart';
@@ -26,7 +27,7 @@ class Work extends StatelessWidget {
       children: const <Widget>[
         WorkTitle(
           title: "Software Engineer",
-          company: "KCF Technologies",
+          company: SharedData.kcf,
           url: Url.kcfTechnologies,
         )
       ],
