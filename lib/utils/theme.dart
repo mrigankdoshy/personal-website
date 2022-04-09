@@ -49,7 +49,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
-    fontSize: 20,
+    fontSize: 24,
   );
 
   // Company Title
@@ -57,7 +57,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.blueAccent,
-    fontSize: 20,
+    fontSize: 24,
   );
 
   // Main Text
@@ -74,11 +74,18 @@ class TextStyles {
     fontSize: 20,
   );
 
-  // Highlight Skills
+  // Main Text in Points
+  static const point = TextStyle(
+    fontFamily: 'Calibre',
+    color: AppColors.mediumGrey2,
+    fontSize: 19,
+  );
+
+  // Main Text Highlighted in Points
   static const highlightSkill = TextStyle(
     fontFamily: 'Calibre',
     color: AppColors.blueAccent,
-    fontSize: 17,
+    fontSize: 19,
   );
 
   // Skills
@@ -122,5 +129,12 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.blueAccent,
     fontSize: 17,
+  );
+
+  //  Date
+  static const date = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.darkGrey1,
+    fontSize: 15,
   );
 }
