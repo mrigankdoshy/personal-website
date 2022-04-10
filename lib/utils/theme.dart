@@ -9,6 +9,7 @@ class AppColors {
   static const mediumGrey2 = Color(0xFF8391A6);
   static const darkGrey1 = Color(0xFF57657A);
   static const blueAccent = Color(0xFF80F0FF);
+  static const blueOffset = Color(0xFF0A192F);
   static const backgroundBlue = Color(0xFF051021);
 }
 
