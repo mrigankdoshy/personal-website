@@ -90,6 +90,13 @@ class TextStyles {
     fontSize: 19,
   );
 
+  // Main Text in Projects
+  static const project = TextStyle(
+    fontFamily: 'Calibre',
+    color: AppColors.mediumGrey2,
+    fontSize: 17,
+  );
+
   // Main Text Highlighted in Points
   static const highlightSkill = TextStyle(
     fontFamily: 'Calibre',
@@ -102,6 +109,13 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.lightGrey2,
     fontSize: 15,
+  );
+
+  // Project Skills
+  static const projectSkill = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.lightGrey2,
+    fontSize: 13,
   );
 
   // Navigation Bar Button Text
