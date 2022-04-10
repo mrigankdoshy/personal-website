@@ -4,7 +4,7 @@ class AppColors {
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF000000);
   static const lightGrey1 = Color(0xFFE6F1FF);
-  static const lightGrey2 = Color(0xFFC1CDDB);
+  static const lightGrey2 = Color(0xFFcadaed);
   static const mediumGrey1 = Color(0xFFAFBDD3);
   static const mediumGrey2 = Color(0xFF8391A6);
   static const darkGrey1 = Color(0xFF57657A);
@@ -49,7 +49,7 @@ class TextStyles {
   static const jobTitle = TextStyle(
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
-    color: AppColors.mediumGrey1,
+    color: AppColors.lightGrey2,
     fontSize: 24,
   );
 
@@ -59,6 +59,14 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.blueAccent,
     fontSize: 24,
+  );
+
+  // Project title
+  static const projectTitle = TextStyle(
+    fontFamily: 'Calibre',
+    fontWeight: FontWeight.bold,
+    color: AppColors.lightGrey2,
+    fontSize: 22,
   );
 
   // Main Text
