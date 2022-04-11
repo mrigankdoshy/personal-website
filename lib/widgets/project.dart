@@ -7,12 +7,14 @@ class Project extends StatelessWidget {
   // final IconData icon;
   final String title;
   final String description;
+  final List tags;
 
   const Project({
     Key? key,
     // required this.icon,
     required this.title,
     required this.description,
+    required this.tags,
   }) : super(key: key);
 
   @override
@@ -59,21 +61,17 @@ class Project extends StatelessWidget {
             ),
             Flexible(
               child: Row(
-                children: const [
-                  AutoSizeText(
-                    "OpenMP",
-                    style: TextStyles.projectSkill,
-                  ),
-                  SizedBox(width: 24.0),
-                  AutoSizeText(
-                    "MPI",
-                    style: TextStyles.projectSkill,
-                  ),
-                  SizedBox(width: 24.0),
-                  AutoSizeText(
-                    "Monte Carlo",
-                    style: TextStyles.projectSkill,
-                  ),
+                children: [
+                  for (var tag in tags)
+                    Row(
+                      children: [
+                        AutoSizeText(
+                          tag,
+                          style: TextStyles.projectSkill,
+                        ),
+                        const SizedBox(width: 16.0),
+                      ],
+                    ),
                 ],
               ),
             ),

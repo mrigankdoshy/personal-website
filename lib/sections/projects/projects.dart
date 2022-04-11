@@ -52,6 +52,7 @@ class _ProjectsState extends State<Projects> {
               return Project(
                 title: _data[index]['title'],
                 description: _data[index]['description'],
+                tags: _data[index]['tags'],
               );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
