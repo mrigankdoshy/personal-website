@@ -1,13 +1,35 @@
-import 'package:auto_size_text/auto_size_text.dart';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 import 'package:personal_website/data/text.dart';
-import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/project.dart';
 import 'package:personal_website/widgets/section_title.dart';
 
-class Projects extends StatelessWidget {
+class Projects extends StatefulWidget {
   const Projects({Key? key}) : super(key: key);
+
+  @override
+  State<Projects> createState() => _ProjectsState();
+}
+
+class _ProjectsState extends State<Projects> {
+  List _data = [];
+
+  Future<void> getJsonData() async {
+    final String jsonData =
+        await rootBundle.loadString('assets/project_data.json');
+    final data = await jsonDecode(jsonData);
+    setState(() {
+      _data = data["projects"];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getJsonData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +47,16 @@ class Projects extends StatelessWidget {
             primary: false,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (BuildContext context, int i) {
-              return const Project();
+            itemCount: _data.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Project(
+                title: _data[index]['title'],
+                description: _data[index]['description'],
+              );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              childAspectRatio: 1.10,
+              childAspectRatio: 1.0,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
             ),

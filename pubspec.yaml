@@ -25,6 +25,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/project_data.json
   fonts:
     - family: Calibre
       fonts:

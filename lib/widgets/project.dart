@@ -4,13 +4,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/utils/theme.dart';
 
 class Project extends StatelessWidget {
-  final IconData icon;
+  // final IconData icon;
   final String title;
   final String description;
 
   const Project({
     Key? key,
-    required this.icon,
+    // required this.icon,
     required this.title,
     required this.description,
   }) : super(key: key);
@@ -27,29 +27,29 @@ class Project extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
-                  FaIcon(
-                    FontAwesomeIcons.arrowTrendUp,
+                children: <Widget>[
+                  const FaIcon(
+                    FontAwesomeIcons.folder,
                     color: AppColors.blueAccent,
-                    size: 36.0,
+                    size: 40.0,
                   ),
-                  SizedBox(height: 24.0),
+                  const SizedBox(height: 32.0),
                   Flexible(
                     child: AutoSizeText(
-                      "Options Pricing",
+                      title,
                       style: TextStyles.projectTitle,
                       maxLines: 2,
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 8.0),
                   Flexible(
                     child: AutoSizeText(
-                      "Applying High Performance Computing techniques to compute the prices of American and European options using different pricing methods",
+                      description,
                       style: TextStyles.project,
                       maxLines: 5,
                     ),
