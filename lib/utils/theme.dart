@@ -4,11 +4,12 @@ class AppColors {
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF000000);
   static const lightGrey1 = Color(0xFFE6F1FF);
-  static const lightGrey2 = Color(0xFFC1CDDB);
+  static const lightGrey2 = Color(0xFFcadaed);
   static const mediumGrey1 = Color(0xFFAFBDD3);
   static const mediumGrey2 = Color(0xFF8391A6);
   static const darkGrey1 = Color(0xFF57657A);
   static const blueAccent = Color(0xFF80F0FF);
+  static const blueOffset = Color(0xFF0A192F);
   static const backgroundBlue = Color(0xFF051021);
 }
 
@@ -48,7 +49,7 @@ class TextStyles {
   static const jobTitle = TextStyle(
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
-    color: AppColors.mediumGrey1,
+    color: AppColors.lightGrey2,
     fontSize: 24,
   );
 
@@ -58,6 +59,14 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.blueAccent,
     fontSize: 24,
+  );
+
+  // Project title
+  static const projectTitle = TextStyle(
+    fontFamily: 'Calibre',
+    fontWeight: FontWeight.bold,
+    color: AppColors.lightGrey2,
+    fontSize: 22,
   );
 
   // Main Text
@@ -81,6 +90,13 @@ class TextStyles {
     fontSize: 19,
   );
 
+  // Main Text in Projects
+  static const project = TextStyle(
+    fontFamily: 'Calibre',
+    color: AppColors.mediumGrey2,
+    fontSize: 17,
+  );
+
   // Main Text Highlighted in Points
   static const highlightSkill = TextStyle(
     fontFamily: 'Calibre',
@@ -93,6 +109,13 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.lightGrey2,
     fontSize: 15,
+  );
+
+  // Project Skills
+  static const projectSkill = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.lightGrey2,
+    fontSize: 13,
   );
 
   // Navigation Bar Button Text

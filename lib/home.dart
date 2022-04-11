@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/sections/about/about.dart';
-import 'package:personal_website/sections/intro.dart';
+import 'package:personal_website/sections/intro/intro.dart';
+import 'package:personal_website/sections/projects/projects.dart';
 import 'package:personal_website/sections/work/work.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
@@ -61,6 +62,7 @@ class Home extends StatelessWidget {
         Intro(),
         About(),
         Work(),
+        Projects(),
       ],
     );
   }
