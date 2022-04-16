@@ -48,7 +48,7 @@ class Project extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       _titleAndGithub(),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(height: 12.0),
                       _description(),
                     ],
                   ),

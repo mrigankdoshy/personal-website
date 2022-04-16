@@ -23,10 +23,10 @@ class Footer extends StatelessWidget {
                 _footerText(),
                 const SizedBox(height: 32.0),
                 _contact(),
-                const SizedBox(height: 32.0),
-                _copyright(),
-                const SizedBox(height: 32.0),
+                const SizedBox(height: 40.0),
                 _socialMedia(),
+                const SizedBox(height: 40.0),
+                _copyright(),
               ],
             ),
           ),
@@ -87,12 +87,13 @@ class Footer extends StatelessWidget {
           ),
         ],
       ),
-      maxLines: 1,
+      maxLines: 2,
     );
   }
 
   Widget _socialMedia() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const <Widget>[
         ClickableIcon(
           icon: FontAwesomeIcons.github,
