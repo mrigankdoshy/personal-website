@@ -15,14 +15,26 @@ class Projects extends StatefulWidget {
 }
 
 class _ProjectsState extends State<Projects> {
-  List _data = [];
+  /// Show More / Show Less Button Logic
+  ///
+  /// Start with showing [condensedView] elements.
+  /// If 'Show More' is clicked, show all elements
+  /// and change button to 'Show Less'.
+  /// If 'Show Less' is clicked, reduce and show [condensedView] elements
+
+  int condensedView = 6;
+  int currentlyShown = 6;
+
+  List _projects = [];
+  final List _tempProjects = [];
 
   Future<void> getJsonData() async {
     final String jsonData =
         await rootBundle.loadString('assets/project_data.json');
     final data = await jsonDecode(jsonData);
     setState(() {
-      _data = data["projects"];
+      _projects = data["projects"];
+      _tempProjects.addAll(_projects.getRange(0, condensedView));
     });
   }
 
@@ -48,12 +60,12 @@ class _ProjectsState extends State<Projects> {
             primary: false,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: _data.length,
+            itemCount: _tempProjects.length,
             itemBuilder: (BuildContext context, int index) {
               return Project(
-                title: _data[index]['title'],
-                description: _data[index]['description'],
-                tags: _data[index]['tags'],
+                title: _projects[index]['title'],
+                description: _projects[index]['description'],
+                tags: _projects[index]['tags'],
               );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -68,11 +80,22 @@ class _ProjectsState extends State<Projects> {
             child: Center(
               child: OutlinedButton(
                 style: ButtonStyles.primary,
-                child: const Text(
-                  'Show More',
+                child: Text(
+                  currentlyShown == _projects.length
+                      ? ButtonData.showLess
+                      : ButtonData.showMore,
                   style: TextStyles.buttonText,
                 ),
-                onPressed: () => debugPrint('Received click'),
+                onPressed: () => setState(() {
+                  if (currentlyShown == _projects.length) {
+                    _tempProjects.removeRange(condensedView, _projects.length);
+                    currentlyShown = condensedView;
+                  } else {
+                    _tempProjects.addAll(
+                        _projects.getRange(condensedView, _projects.length));
+                    currentlyShown = _projects.length;
+                  }
+                }),
               ),
             ),
           ),

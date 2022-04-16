@@ -138,3 +138,9 @@ class TechData {
   static const ios = "iOS";
   static const android = "Android";
 }
+
+class ButtonData {
+  static const showLess = "Show Less";
+  static const showMore = "Show More";
+  static const resume = "Resume";
+}
