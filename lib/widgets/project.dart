@@ -2,9 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/clickable_icon.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Project extends StatefulWidget {
+class Project extends StatelessWidget {
   final String title;
   final String description;
   final String url;
@@ -18,27 +19,8 @@ class Project extends StatefulWidget {
     required this.tags,
   }) : super(key: key);
 
-  @override
-  State<Project> createState() => _ProjectState();
-}
-
-class _ProjectState extends State<Project> {
-  bool _hovered = false;
-
-  void _incrementEnter(PointerEvent details) {
-    setState(() {
-      _hovered = true;
-    });
-  }
-
-  void _incrementExit(PointerEvent details) {
-    setState(() {
-      _hovered = false;
-    });
-  }
-
   bool _containsUrl() {
-    return widget.url != "" ? true : false;
+    return url != "" ? true : false;
   }
 
   @override
@@ -47,7 +29,7 @@ class _ProjectState extends State<Project> {
       cursor:
           _containsUrl() ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: GestureDetector(
-        onTap: () => _containsUrl() ? launch(widget.url) : {},
+        onTap: () => _containsUrl() ? launch(url) : {},
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
@@ -66,7 +48,7 @@ class _ProjectState extends State<Project> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       _titleAndGithub(),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(height: 12.0),
                       _description(),
                     ],
                   ),
@@ -87,23 +69,17 @@ class _ProjectState extends State<Project> {
       children: <Widget>[
         Flexible(
           child: AutoSizeText(
-            widget.title,
+            title,
             style: TextStyles.projectTitle,
             maxLines: 2,
           ),
         ),
         if (_containsUrl())
-          MouseRegion(
-            onEnter: _incrementEnter,
-            onExit: _incrementExit,
-            child: IconButton(
-              padding: const EdgeInsets.all(0.0),
-              constraints: const BoxConstraints(),
-              icon: const FaIcon(FontAwesomeIcons.github),
-              iconSize: 20.0,
-              color: _hovered ? AppColors.blueAccent : AppColors.mediumGrey1,
-              onPressed: () => launch(widget.url),
-            ),
+          ClickableIcon(
+            icon: FontAwesomeIcons.github,
+            iconSize: 20.0,
+            iconColor: AppColors.mediumGrey1,
+            url: url,
           ),
       ],
     );
@@ -112,7 +88,7 @@ class _ProjectState extends State<Project> {
   Widget _description() {
     return Flexible(
       child: AutoSizeText(
-        widget.description,
+        description,
         style: TextStyles.project,
         maxLines: 5,
       ),
@@ -123,7 +99,7 @@ class _ProjectState extends State<Project> {
     return Flexible(
       child: Row(
         children: [
-          for (var tag in widget.tags)
+          for (var tag in tags)
             Row(
               children: [
                 AutoSizeText(

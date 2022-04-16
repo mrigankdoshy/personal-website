@@ -139,6 +139,21 @@ class TechData {
   static const android = "Android";
 }
 
+class FooterData {
+  static const footerTextPart1 = "I'm Goa-bred,";
+  static const footerTextPart2 = "passionately curious";
+  static const footerTextPart3 = "and welcome bribes in the form of pizza";
+
+  static const contactPart1 =
+      "Let's get in touch! I prefer ";
+  static const contactPart2 = "Emails";
+  static const contactPart3 = " and ";
+  static const contactPart4 = "Instagram DMs";
+  static const contactPart5 = ".";
+
+  static const copyright = "© 2022 by Mrigank Doshy";
+}
+
 class ButtonData {
   static const showLess = "Show Less";
   static const showMore = "Show More";

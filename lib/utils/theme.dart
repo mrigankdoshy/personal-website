@@ -144,7 +144,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
-    fontSize: 36,
+    fontSize: 40,
   );
 
   //  Greeting
@@ -158,6 +158,28 @@ class TextStyles {
   static const date = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.darkGrey1,
+    fontSize: 15,
+  );
+
+  // Contact
+  static const contact = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.mediumGrey1,
+    fontSize: 17,
+  );
+
+  // Contact URL
+  static const highlightContact = TextStyle(
+    fontFamily: 'SFMono',
+    fontWeight: FontWeight.bold,
+    color: AppColors.blueAccent,
+    fontSize: 17,
+  );
+
+  // Copyright
+  static const copyright = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.lightGrey2,
     fontSize: 15,
   );
 }
