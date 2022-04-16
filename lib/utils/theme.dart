@@ -175,6 +175,13 @@ class TextStyles {
     color: AppColors.blueAccent,
     fontSize: 17,
   );
+
+  // Copyright
+  static const copyright = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.lightGrey2,
+    fontSize: 15,
+  );
 }
 
 class ButtonStyles {

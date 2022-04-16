@@ -12,66 +12,88 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
             child: Column(
               children: <Widget>[
-                const AutoSizeText(
-                  FooterData.footerTextPart1,
-                  style: TextStyles.footer,
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                ),
-                const AutoSizeText(
-                  FooterData.footerTextPart2,
-                  style: TextStyles.footer,
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                ),
-                const AutoSizeText(
-                  FooterData.footerTextPart3,
-                  style: TextStyles.footer,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                ),
+                _footerText(),
                 const SizedBox(height: 32.0),
-                AutoSizeText.rich(
-                  TextSpan(
-                    style: TextStyles.contact,
-                    children: <TextSpan>[
-                      const TextSpan(
-                        text: FooterData.contactPart1,
-                      ),
-                      TextSpan(
-                        text: FooterData.contactPart2,
-                        style: TextStyles.highlightContact,
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch(Url.email),
-                      ),
-                      const TextSpan(
-                        text: FooterData.contactPart3,
-                      ),
-                      TextSpan(
-                        text: FooterData.contactPart4,
-                        style: TextStyles.highlightContact,
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch(Url.instagram),
-                      ),
-                      const TextSpan(
-                        text: FooterData.contactPart5,
-                      ),
-                    ],
-                  ),
-                  maxLines: 1,
-                ),
+                _contact(),
+                const SizedBox(height: 32.0),
+                _copyright()
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _footerText() {
+    return Column(
+      children: const <Widget>[
+        AutoSizeText(
+          FooterData.footerTextPart1,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          FooterData.footerTextPart2,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          FooterData.footerTextPart3,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+        ),
+      ],
+    );
+  }
+
+  Widget _contact() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.contact,
+        children: <TextSpan>[
+          const TextSpan(
+            text: FooterData.contactPart1,
+          ),
+          TextSpan(
+            text: FooterData.contactPart2,
+            style: TextStyles.highlightContact,
+            recognizer: TapGestureRecognizer()..onTap = () => launch(Url.email),
+          ),
+          const TextSpan(
+            text: FooterData.contactPart3,
+          ),
+          TextSpan(
+            text: FooterData.contactPart4,
+            style: TextStyles.highlightContact,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => launch(Url.instagram),
+          ),
+          const TextSpan(
+            text: FooterData.contactPart5,
+          ),
+        ],
+      ),
+      maxLines: 1,
+    );
+  }
+
+  Widget _copyright() {
+    return const AutoSizeText(
+      FooterData.copyright,
+      style: TextStyles.copyright,
+      textAlign: TextAlign.center,
+      maxLines: 1,
     );
   }
 }
