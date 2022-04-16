@@ -34,4 +34,15 @@ class Url {
       "https://play.google.com/store/apps/details?id=com.themuleapp.app";
   static const routingProductivityImprovement =
       "https://sites.psu.edu/lfshowcasesp21/2021/04/29/routing-productivity-improvement/";
+
+  // Contact and Social
+  static const email = "mailto:mrigankdoshy@gmail.com";
+  static const github = "http://github.com/mrigankdoshy";
+  static const instagram = "https://www.instagram.com/mrigankdoshy";
+  static const linkedin = "https://linkedin.com/in/mrigankdoshy";
+  static const twitter = "https://www.twitter.com/mrigankdoshy";
+  static const youtube =
+      "https://www.youtube.com/channel/UCFdJXx82HEolB4Nv2cW8C_g";
+  static const spotify =
+      "https://open.spotify.com/user/0dmta114n09jih8ye0ql93v08";
 }

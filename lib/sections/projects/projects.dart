@@ -47,7 +47,7 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 64.0),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,7 +77,7 @@ class _ProjectsState extends State<Projects> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32.0),
+            padding: const EdgeInsets.symmetric(vertical: 48.0),
             child: Center(
               child: OutlinedButton(
                 style: ButtonStyles.primary,
