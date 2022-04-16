@@ -136,7 +136,7 @@ class TextStyles {
   static const buttonText = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.blueAccent,
-    fontSize: 16,
+    fontSize: 13,
   );
 
   // Footer title
@@ -159,5 +159,25 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.darkGrey1,
     fontSize: 15,
+  );
+}
+
+class ButtonStyles {
+  static ButtonStyle primary = ButtonStyle(
+    fixedSize: MaterialStateProperty.all(const Size(120, 50)),
+    overlayColor:
+        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    ),
+    side: MaterialStateProperty.all(
+      const BorderSide(
+        color: AppColors.blueAccent,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+    ),
   );
 }

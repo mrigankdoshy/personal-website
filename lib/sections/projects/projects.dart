@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:personal_website/data/text.dart';
+import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/project.dart';
 import 'package:personal_website/widgets/section_title.dart';
 
@@ -60,6 +61,19 @@ class _ProjectsState extends State<Projects> {
               childAspectRatio: 1.0,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 32.0),
+            child: Center(
+              child: OutlinedButton(
+                style: ButtonStyles.primary,
+                child: const Text(
+                  'Show More',
+                  style: TextStyles.buttonText,
+                ),
+                onPressed: () => debugPrint('Received click'),
+              ),
             ),
           ),
         ],
