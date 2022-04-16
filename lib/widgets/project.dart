@@ -78,6 +78,7 @@ class Project extends StatelessWidget {
           ClickableIcon(
             icon: FontAwesomeIcons.github,
             iconSize: 20.0,
+            iconColor: AppColors.mediumGrey1,
             url: url,
           ),
       ],

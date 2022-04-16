@@ -6,13 +6,15 @@ import 'package:url_launcher/url_launcher.dart';
 class ClickableIcon extends StatefulWidget {
   final IconData icon;
   final double iconSize;
+  final Color iconColor;
   final String url;
-  const ClickableIcon({
-    Key? key,
-    required this.icon,
-    required this.iconSize,
-    required this.url,
-  }) : super(key: key);
+  const ClickableIcon(
+      {Key? key,
+      required this.icon,
+      required this.iconSize,
+      required this.url,
+      this.iconColor = AppColors.lightGrey1})
+      : super(key: key);
 
   @override
   State<ClickableIcon> createState() => _ClickableIconState();
@@ -43,7 +45,7 @@ class _ClickableIconState extends State<ClickableIcon> {
         constraints: const BoxConstraints(),
         icon: FaIcon(widget.icon),
         iconSize: widget.iconSize,
-        color: _hovered ? AppColors.blueAccent : AppColors.mediumGrey1,
+        color: _hovered ? AppColors.blueAccent : widget.iconColor,
         onPressed: () => launch(widget.url),
       ),
     );
