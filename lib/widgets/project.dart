@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/clickable_icon.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Project extends StatefulWidget {
@@ -96,13 +97,11 @@ class _ProjectState extends State<Project> {
           MouseRegion(
             onEnter: _incrementEnter,
             onExit: _incrementExit,
-            child: IconButton(
-              padding: const EdgeInsets.all(0.0),
-              constraints: const BoxConstraints(),
-              icon: const FaIcon(FontAwesomeIcons.github),
+            child: ClickableIcon(
+              hovered: _hovered,
+              icon: FontAwesomeIcons.github,
               iconSize: 20.0,
-              color: _hovered ? AppColors.blueAccent : AppColors.mediumGrey1,
-              onPressed: () => launch(widget.url),
+              url: widget.url,
             ),
           ),
       ],

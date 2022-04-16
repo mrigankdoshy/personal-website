@@ -1,13 +1,34 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/clickable_icon.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
+
+  @override
+  State<Footer> createState() => _FooterState();
+}
+
+class _FooterState extends State<Footer> {
+  bool _hovered = false;
+
+  void _incrementEnter(PointerEvent details) {
+    setState(() {
+      _hovered = true;
+    });
+  }
+
+  void _incrementExit(PointerEvent details) {
+    setState(() {
+      _hovered = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +44,9 @@ class Footer extends StatelessWidget {
                 const SizedBox(height: 32.0),
                 _contact(),
                 const SizedBox(height: 32.0),
-                _copyright()
+                _copyright(),
+                const SizedBox(height: 32.0),
+                _socialMedia(),
               ],
             ),
           ),
@@ -85,6 +108,78 @@ class Footer extends StatelessWidget {
         ],
       ),
       maxLines: 1,
+    );
+  }
+
+  Widget _socialMedia() {
+    return Row(
+      children: [
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.github,
+            iconSize: 32.0,
+            url: Url.github,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.instagram,
+            iconSize: 32.0,
+            url: Url.instagram,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.linkedinIn,
+            iconSize: 32.0,
+            url: Url.linkedin,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.twitter,
+            iconSize: 32.0,
+            url: Url.twitter,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.youtube,
+            iconSize: 32.0,
+            url: Url.youtube,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+        MouseRegion(
+          onEnter: _incrementEnter,
+          onExit: _incrementExit,
+          child: ClickableIcon(
+            hovered: _hovered,
+            icon: FontAwesomeIcons.spotify,
+            iconSize: 32.0,
+            url: Url.spotify,
+          ),
+        ),
+      ],
     );
   }
 
