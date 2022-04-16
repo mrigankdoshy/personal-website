@@ -65,12 +65,13 @@ class _ProjectsState extends State<Projects> {
               return Project(
                 title: _projects[index]['title'],
                 description: _projects[index]['description'],
+                url: _projects[index]['url'],
                 tags: _projects[index]['tags'],
               );
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              childAspectRatio: 1.0,
+              childAspectRatio: 1.35,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
             ),
