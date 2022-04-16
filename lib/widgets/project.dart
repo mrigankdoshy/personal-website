@@ -37,32 +37,44 @@ class _ProjectState extends State<Project> {
     });
   }
 
+  bool _containsUrl() {
+    return widget.url != "" ? true : false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-      color: AppColors.blueOffset,
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _titleAndGithub(),
-                  const SizedBox(height: 8.0),
-                  _description(),
-                ],
-              ),
+    return MouseRegion(
+      cursor:
+          _containsUrl() ? SystemMouseCursors.click : SystemMouseCursors.basic,
+      child: GestureDetector(
+        onTap: () => _containsUrl() ? launch(widget.url) : {},
+        child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+          color: AppColors.blueOffset,
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      _titleAndGithub(),
+                      const SizedBox(height: 8.0),
+                      _description(),
+                    ],
+                  ),
+                ),
+                _tags(),
+              ],
             ),
-            _tags(),
-          ],
+          ),
         ),
       ),
     );
@@ -80,18 +92,19 @@ class _ProjectState extends State<Project> {
             maxLines: 2,
           ),
         ),
-        MouseRegion(
-          onEnter: _incrementEnter,
-          onExit: _incrementExit,
-          child: IconButton(
-            padding: const EdgeInsets.all(0.0),
-            constraints: const BoxConstraints(),
-            icon: const FaIcon(FontAwesomeIcons.github),
-            iconSize: 20.0,
-            color: _hovered ? AppColors.blueAccent : AppColors.mediumGrey1,
-            onPressed: () => launch(widget.url),
+        if (_containsUrl())
+          MouseRegion(
+            onEnter: _incrementEnter,
+            onExit: _incrementExit,
+            child: IconButton(
+              padding: const EdgeInsets.all(0.0),
+              constraints: const BoxConstraints(),
+              icon: const FaIcon(FontAwesomeIcons.github),
+              iconSize: 20.0,
+              color: _hovered ? AppColors.blueAccent : AppColors.mediumGrey1,
+              onPressed: () => launch(widget.url),
+            ),
           ),
-        ),
       ],
     );
   }
