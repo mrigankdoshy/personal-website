@@ -122,14 +122,14 @@ class TextStyles {
   static const navBarButtonText = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.mediumGrey1,
-    fontSize: 15,
+    fontSize: 13,
   );
 
   // Navigation Bar Button Number
   static const navBarButtonNumber = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.blueAccent,
-    fontSize: 15,
+    fontSize: 13,
   );
 
   //  Button Text

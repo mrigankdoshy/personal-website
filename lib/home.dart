@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/text.dart';
 import 'package:personal_website/sections/about/about.dart';
 import 'package:personal_website/sections/footer/footer.dart';
 import 'package:personal_website/sections/intro/intro.dart';
 import 'package:personal_website/sections/projects/projects.dart';
 import 'package:personal_website/sections/work/work.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/menu_button.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
 class Home extends StatelessWidget {
@@ -17,7 +19,22 @@ class Home extends StatelessWidget {
         elevation: 0,
         backgroundColor: AppColors.backgroundBlue,
         actions: const [
-          // TODO: Add Section Buttons
+          MenuButtton(
+            buttonNumber: ButtonData.buttonNumber1,
+            buttonTitle: ButtonData.button1Title,
+          ),
+          MenuButtton(
+            buttonNumber: ButtonData.buttonNumber2,
+            buttonTitle: ButtonData.button2Title,
+          ),
+          MenuButtton(
+            buttonNumber: ButtonData.buttonNumber3,
+            buttonTitle: ButtonData.button3Title,
+          ),
+          MenuButtton(
+            buttonNumber: ButtonData.buttonNumber4,
+            buttonTitle: ButtonData.button4Title,
+          ),
           // TODO: Add Resume Button
         ],
       ),
