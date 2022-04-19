@@ -202,4 +202,22 @@ class ButtonStyles {
       ),
     ),
   );
+
+  static ButtonStyle resume = ButtonStyle(
+    fixedSize: MaterialStateProperty.all(const Size(84, 42)),
+    overlayColor:
+        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    ),
+    side: MaterialStateProperty.all(
+      const BorderSide(
+        color: AppColors.blueAccent,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+    ),
+  );
 }
