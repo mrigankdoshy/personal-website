@@ -15,58 +15,63 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      body: SingleChildScrollView(
-        child: ResponsiveWidget(
-          largeScreen: _buildLargeScreen(context),
-          mediumScreen: _buildMediumScreen(context),
-          smallScreen: _buildSmallScreen(context),
-        ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            floating: true,
+            flexibleSpace: _appBar(),
+            backgroundColor: AppColors.backgroundBlue,
+            expandedHeight: 90,
+          ),
+          SliverToBoxAdapter(
+            child: ResponsiveWidget(
+              largeScreen: _buildLargeScreen(context),
+              mediumScreen: _buildMediumScreen(context),
+              smallScreen: _buildSmallScreen(context),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  PreferredSizeWidget _appBar() {
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(90.0),
-      child: SafeArea(
-        child: SizedBox(
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 24.0, horizontal: 72.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                const MenuButtton(
-                  buttonNumber: ButtonData.buttonNumber1,
-                  buttonTitle: ButtonData.button1Title,
+  Widget _appBar() {
+    return SafeArea(
+      child: SizedBox(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 72.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              const MenuButtton(
+                buttonNumber: ButtonData.buttonNumber1,
+                buttonTitle: ButtonData.button1Title,
+              ),
+              const SizedBox(width: 8.0),
+              const MenuButtton(
+                buttonNumber: ButtonData.buttonNumber2,
+                buttonTitle: ButtonData.button2Title,
+              ),
+              const SizedBox(width: 8.0),
+              const MenuButtton(
+                buttonNumber: ButtonData.buttonNumber3,
+                buttonTitle: ButtonData.button3Title,
+              ),
+              const SizedBox(width: 8.0),
+              const MenuButtton(
+                buttonNumber: ButtonData.buttonNumber4,
+                buttonTitle: ButtonData.button4Title,
+              ),
+              const SizedBox(width: 12.0),
+              OutlinedButton(
+                style: ButtonStyles.resume,
+                child: const Text(
+                  ButtonData.resume,
+                  style: TextStyles.navBarButtonNumber,
                 ),
-                const SizedBox(width: 8.0),
-                const MenuButtton(
-                  buttonNumber: ButtonData.buttonNumber2,
-                  buttonTitle: ButtonData.button2Title,
-                ),
-                const SizedBox(width: 8.0),
-                const MenuButtton(
-                  buttonNumber: ButtonData.buttonNumber3,
-                  buttonTitle: ButtonData.button3Title,
-                ),
-                const SizedBox(width: 8.0),
-                const MenuButtton(
-                  buttonNumber: ButtonData.buttonNumber4,
-                  buttonTitle: ButtonData.button4Title,
-                ),
-                const SizedBox(width: 12.0),
-                OutlinedButton(
-                  style: ButtonStyles.resume,
-                  child: const Text(
-                    ButtonData.resume,
-                    style: TextStyles.navBarButtonNumber,
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+                onPressed: () {},
+              ),
+            ],
           ),
         ),
       ),
