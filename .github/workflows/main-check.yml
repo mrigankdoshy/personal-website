@@ -1,0 +1,36 @@
+name: Main Check
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches: [ main ]
+  
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Print Dart SDK version
+        run: dart --version
+        
+      - name: Print Flutter version
+        run: flutter --version
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: flutter analyze
+        
+      - name: Build web
+        run: flutter build web
