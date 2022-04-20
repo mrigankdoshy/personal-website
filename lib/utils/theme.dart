@@ -122,14 +122,14 @@ class TextStyles {
   static const navBarButtonText = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.mediumGrey1,
-    fontSize: 15,
+    fontSize: 13,
   );
 
   // Navigation Bar Button Number
   static const navBarButtonNumber = TextStyle(
     fontFamily: 'SFMono',
     color: AppColors.blueAccent,
-    fontSize: 15,
+    fontSize: 13,
   );
 
   //  Button Text
@@ -187,6 +187,24 @@ class TextStyles {
 class ButtonStyles {
   static ButtonStyle primary = ButtonStyle(
     fixedSize: MaterialStateProperty.all(const Size(120, 50)),
+    overlayColor:
+        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    ),
+    side: MaterialStateProperty.all(
+      const BorderSide(
+        color: AppColors.blueAccent,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+    ),
+  );
+
+  static ButtonStyle resume = ButtonStyle(
+    fixedSize: MaterialStateProperty.all(const Size(84, 42)),
     overlayColor:
         MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
     shape: MaterialStateProperty.all(

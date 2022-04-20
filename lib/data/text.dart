@@ -144,8 +144,7 @@ class FooterData {
   static const footerTextPart2 = "passionately curious";
   static const footerTextPart3 = "and welcome bribes in the form of pizza";
 
-  static const contactPart1 =
-      "Let's get in touch! I prefer ";
+  static const contactPart1 = "Let's get in touch! I prefer ";
   static const contactPart2 = "Emails";
   static const contactPart3 = " and ";
   static const contactPart4 = "Instagram DMs";
@@ -155,6 +154,16 @@ class FooterData {
 }
 
 class ButtonData {
+  static const buttonNumber1 = "01.";
+  static const buttonNumber2 = "02.";
+  static const buttonNumber3 = "03.";
+  static const buttonNumber4 = "04.";
+
+  static const button1Title = "About";
+  static const button2Title = "Experience";
+  static const button3Title = "Projects";
+  static const button4Title = "Contact";
+  
   static const showLess = "Show Less";
   static const showMore = "Show More";
   static const resume = "Resume";
