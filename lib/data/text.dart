@@ -163,7 +163,7 @@ class ButtonData {
   static const button2Title = "Experience";
   static const button3Title = "Projects";
   static const button4Title = "Contact";
-  
+
   static const showLess = "Show Less";
   static const showMore = "Show More";
   static const resume = "Resume";
