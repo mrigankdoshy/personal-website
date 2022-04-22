@@ -9,8 +9,16 @@ import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/menu_button.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  static final List<GlobalKey> dataKeys =
+      List.generate(4, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -43,22 +51,26 @@ class Home extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            const MenuButtton(
+            MenuButtton(
+              dataKey: dataKeys[0],
               buttonNumber: ButtonData.buttonNumber1,
               buttonTitle: ButtonData.button1Title,
             ),
             const SizedBox(width: 8.0),
-            const MenuButtton(
+            MenuButtton(
+              dataKey: dataKeys[1],
               buttonNumber: ButtonData.buttonNumber2,
               buttonTitle: ButtonData.button2Title,
             ),
             const SizedBox(width: 8.0),
-            const MenuButtton(
+            MenuButtton(
+              dataKey: dataKeys[2],
               buttonNumber: ButtonData.buttonNumber3,
               buttonTitle: ButtonData.button3Title,
             ),
             const SizedBox(width: 8.0),
-            const MenuButtton(
+            MenuButtton(
+              dataKey: dataKeys[3],
               buttonNumber: ButtonData.buttonNumber4,
               buttonTitle: ButtonData.button4Title,
             ),
@@ -105,12 +117,12 @@ class Home extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: const <Widget>[
-        Intro(),
-        About(),
-        Work(),
-        Projects(),
-        Footer(),
+      children: <Widget>[
+        const Intro(),
+        About(key: dataKeys[0]),
+        Work(key: dataKeys[1]),
+        Projects(key: dataKeys[2]),
+        Footer(key: dataKeys[3]),
       ],
     );
   }
