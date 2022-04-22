@@ -9,14 +9,9 @@ import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/menu_button.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   static final List<GlobalKey> dataKeys =
       List.generate(4, (index) => GlobalKey());
 
