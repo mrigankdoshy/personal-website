@@ -2,7 +2,8 @@ import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 
 class SlideAnimation extends StatelessWidget {
-  final String animationKey;
+  final UniqueKey animationKey;
+  final bool slideDown;
   final Duration duration;
   final Duration delay;
   final Widget child;
@@ -11,6 +12,7 @@ class SlideAnimation extends StatelessWidget {
     Key? key,
     required this.animationKey,
     required this.child,
+    this.slideDown = false,
     this.delay = const Duration(milliseconds: 0),
     this.duration = const Duration(milliseconds: 250),
   }) : super(key: key);
@@ -18,7 +20,7 @@ class SlideAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimateIfVisible(
-      key: Key(animationKey),
+      key: animationKey,
       duration: duration,
       delay: delay,
       builder: (
@@ -33,7 +35,7 @@ class SlideAnimation extends StatelessWidget {
             CurvedAnimation(parent: animation, curve: Curves.fastOutSlowIn)),
         child: SlideTransition(
           position: Tween<Offset>(
-            begin: const Offset(0, -0.8),
+            begin: slideDown ? const Offset(0, -0.8) : const Offset(0, 0.8),
             end: Offset.zero,
           ).animate(animation),
           child: child,

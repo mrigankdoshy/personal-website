@@ -2,9 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
-import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/data/url.dart';
+import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
+import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Intro extends StatelessWidget {
@@ -39,11 +40,37 @@ class Intro extends StatelessWidget {
     );
   }
 
+  Widget _about() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
+        children: <TextSpan>[
+          const TextSpan(
+            text: IntroData.about,
+          ),
+          TextSpan(
+            text: WorkData.kcf,
+            style: TextStyles.highlightParagraph,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                launch(Url.kcfTechnologies);
+              },
+          ),
+        ],
+      ),
+      maxLines: 5,
+    );
+  }
+
   Widget _greeting() {
-    return const AutoSizeText(
-      IntroData.greeting,
-      style: TextStyles.greeting,
-      maxLines: 1,
+    return SlideAnimation(
+      animationKey: UniqueKey(),
+      delay: const Duration(milliseconds: 750),
+      child: const AutoSizeText(
+        IntroData.greeting,
+        style: TextStyles.greeting,
+        maxLines: 1,
+      ),
     );
   }
 
@@ -65,28 +92,6 @@ class Intro extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-
-  Widget _about() {
-    return AutoSizeText.rich(
-      TextSpan(
-        style: TextStyles.paragraph,
-        children: <TextSpan>[
-          const TextSpan(
-            text: IntroData.about,
-          ),
-          TextSpan(
-            text: WorkData.kcf,
-            style: TextStyles.highlightParagraph,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                launch(Url.kcfTechnologies);
-              },
-          ),
-        ],
-      ),
-      maxLines: 5,
     );
   }
 }

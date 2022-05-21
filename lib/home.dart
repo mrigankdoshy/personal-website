@@ -51,7 +51,8 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             SlideAnimation(
-              animationKey: ButtonData.button1Title,
+              animationKey: UniqueKey(),
+              slideDown: true,
               child: MenuButtton(
                 dataKey: dataKeys[0],
                 buttonNumber: ButtonData.buttonNumber1,
@@ -60,7 +61,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: ButtonData.button2Title,
+              animationKey: UniqueKey(),
+              slideDown: true,
               delay: const Duration(milliseconds: 50),
               child: MenuButtton(
                 dataKey: dataKeys[1],
@@ -70,7 +72,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: ButtonData.button3Title,
+              animationKey: UniqueKey(),
+              slideDown: true,
               delay: const Duration(milliseconds: 100),
               child: MenuButtton(
                 dataKey: dataKeys[2],
@@ -80,7 +83,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: ButtonData.button4Title,
+              animationKey: UniqueKey(),
+              slideDown: true,
               delay: const Duration(milliseconds: 150),
               child: MenuButtton(
                 dataKey: dataKeys[3],
@@ -90,7 +94,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 12.0),
             SlideAnimation(
-              animationKey: ButtonData.resume,
+              animationKey: UniqueKey(),
+              slideDown: true,
               delay: const Duration(milliseconds: 200),
               child: OutlinedButton(
                 style: ButtonStyles.resume,
