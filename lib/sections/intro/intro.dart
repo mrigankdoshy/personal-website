@@ -1,3 +1,4 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,7 @@ class Intro extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context))
-            Image.asset(
-              'assets/intro_background.png',
-              scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
-            ),
+          if (!ResponsiveWidget.isSmallScreen(context)) _introBackground(),
           SizedBox(width: !ResponsiveWidget.isSmallScreen(context) ? 30 : 0),
           Flexible(
             child: Column(
@@ -36,12 +33,12 @@ class Intro extends StatelessWidget {
                 const SizedBox(height: 25.0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
-                  delay: const Duration(milliseconds: 800),
+                  delay: const Duration(milliseconds: 850),
                   child: _nameAndTitle(),
                 ),
                 SlideAnimation(
                   animationKey: UniqueKey(),
-                  delay: const Duration(milliseconds: 850),
+                  delay: const Duration(milliseconds: 900),
                   child: _about(),
                 ),
               ],
@@ -79,6 +76,28 @@ class Intro extends StatelessWidget {
       IntroData.greeting,
       style: TextStyles.greeting,
       maxLines: 1,
+    );
+  }
+
+  Widget _introBackground() {
+    return AnimateIfVisible(
+      key: UniqueKey(),
+      duration: const Duration(milliseconds: 300),
+      delay: const Duration(milliseconds: 750),
+      builder: (
+        BuildContext context,
+        Animation<double> animation,
+      ) =>
+          FadeTransition(
+        opacity: Tween<double>(
+          begin: 0,
+          end: 1,
+        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
+        child: Image.asset(
+          'assets/intro_background.png',
+          scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
+        ),
+      ),
     );
   }
 
