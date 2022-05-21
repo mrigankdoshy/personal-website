@@ -14,7 +14,7 @@ class SlideAnimation extends StatelessWidget {
     required this.child,
     this.slideDown = false,
     this.delay = const Duration(milliseconds: 0),
-    this.duration = const Duration(milliseconds: 250),
+    this.duration = const Duration(milliseconds: 300),
   }) : super(key: key);
 
   @override
@@ -31,8 +31,7 @@ class SlideAnimation extends StatelessWidget {
         opacity: Tween<double>(
           begin: 0,
           end: 1,
-        ).animate(
-            CurvedAnimation(parent: animation, curve: Curves.fastOutSlowIn)),
+        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
         child: SlideTransition(
           position: Tween<Offset>(
             begin: slideDown ? const Offset(0, -0.8) : const Offset(0, 0.8),

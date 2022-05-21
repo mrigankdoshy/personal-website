@@ -28,10 +28,22 @@ class Intro extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _greeting(),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 750),
+                  child: _greeting(),
+                ),
                 const SizedBox(height: 25.0),
-                _nameAndTitle(),
-                _about(),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 800),
+                  child: _nameAndTitle(),
+                ),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 850),
+                  child: _about(),
+                ),
               ],
             ),
           ),
@@ -63,14 +75,10 @@ class Intro extends StatelessWidget {
   }
 
   Widget _greeting() {
-    return SlideAnimation(
-      animationKey: UniqueKey(),
-      delay: const Duration(milliseconds: 750),
-      child: const AutoSizeText(
-        IntroData.greeting,
-        style: TextStyles.greeting,
-        maxLines: 1,
-      ),
+    return const AutoSizeText(
+      IntroData.greeting,
+      style: TextStyles.greeting,
+      maxLines: 1,
     );
   }
 
