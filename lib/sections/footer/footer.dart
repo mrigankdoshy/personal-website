@@ -6,6 +6,8 @@ import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/clickable_icon.dart';
+import 'package:personal_website/widgets/fade_animation.dart';
+import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
@@ -20,43 +22,34 @@ class Footer extends StatelessWidget {
           Flexible(
             child: Column(
               children: <Widget>[
-                _footerText(),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 50),
+                  child: _footerText(),
+                ),
                 const SizedBox(height: 32.0),
-                _contact(),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 150),
+                  child: _contact(),
+                ),
                 const SizedBox(height: 40.0),
-                _socialMedia(),
+                SlideAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 250),
+                  child: _socialMedia(),
+                ),
                 const SizedBox(height: 40.0),
-                _copyright(),
+                FadeAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 350),
+                  child: _copyright(),
+                ),
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _footerText() {
-    return Column(
-      children: const <Widget>[
-        AutoSizeText(
-          FooterData.footerTextPart1,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 1,
-        ),
-        AutoSizeText(
-          FooterData.footerTextPart2,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 1,
-        ),
-        AutoSizeText(
-          FooterData.footerTextPart3,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-        ),
-      ],
     );
   }
 
@@ -88,6 +81,40 @@ class Footer extends StatelessWidget {
         ],
       ),
       maxLines: 2,
+    );
+  }
+
+  Widget _copyright() {
+    return const AutoSizeText(
+      FooterData.copyright,
+      style: TextStyles.copyright,
+      textAlign: TextAlign.center,
+      maxLines: 1,
+    );
+  }
+
+  Widget _footerText() {
+    return Column(
+      children: const <Widget>[
+        AutoSizeText(
+          FooterData.footerTextPart1,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          FooterData.footerTextPart2,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+        ),
+        AutoSizeText(
+          FooterData.footerTextPart3,
+          style: TextStyles.footer,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+        ),
+      ],
     );
   }
 
@@ -131,15 +158,6 @@ class Footer extends StatelessWidget {
           url: Url.spotify,
         ),
       ],
-    );
-  }
-
-  Widget _copyright() {
-    return const AutoSizeText(
-      FooterData.copyright,
-      style: TextStyles.copyright,
-      textAlign: TextAlign.center,
-      maxLines: 1,
     );
   }
 }
