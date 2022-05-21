@@ -1,10 +1,10 @@
-import 'package:auto_animated/auto_animated.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,7 +19,15 @@ class Intro extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context)) _introBackground(),
+          if (!ResponsiveWidget.isSmallScreen(context))
+            FadeAnimation(
+              animationKey: UniqueKey(),
+              delay: const Duration(milliseconds: 750),
+              child: Image.asset(
+                'assets/intro_background.png',
+                scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
+              ),
+            ),
           SizedBox(width: !ResponsiveWidget.isSmallScreen(context) ? 30 : 0),
           Flexible(
             child: Column(
@@ -76,28 +84,6 @@ class Intro extends StatelessWidget {
       IntroData.greeting,
       style: TextStyles.greeting,
       maxLines: 1,
-    );
-  }
-
-  Widget _introBackground() {
-    return AnimateIfVisible(
-      key: UniqueKey(),
-      duration: const Duration(milliseconds: 300),
-      delay: const Duration(milliseconds: 750),
-      builder: (
-        BuildContext context,
-        Animation<double> animation,
-      ) =>
-          FadeTransition(
-        opacity: Tween<double>(
-          begin: 0,
-          end: 1,
-        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
-        child: Image.asset(
-          'assets/intro_background.png',
-          scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
-        ),
-      ),
     );
   }
 

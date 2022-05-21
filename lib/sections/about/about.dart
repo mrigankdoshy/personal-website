@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/sections/about/about_me.dart';
 import 'package:personal_website/sections/about/my_picture.dart';
+import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
 class About extends StatelessWidget {
@@ -18,7 +19,11 @@ class About extends StatelessWidget {
               const AboutMe(),
               SizedBox(
                   width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
-              const MyPicture(),
+              FadeAnimation(
+                animationKey: UniqueKey(),
+                delay: const Duration(milliseconds: 950),
+                child: const MyPicture(),
+              ),
             ],
           ),
         ],

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/recent_tech.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
@@ -15,27 +16,31 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      child: Column(
-        children: <Widget>[
-          const SectionTitle(
-            number: SectionTitleData.sectionNumber1,
-            title: SectionTitleData.section1Title,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              _aboutMeParagraph1(),
-              const SizedBox(height: 25.0),
-              _aboutMeParagraph2(),
-              const SizedBox(height: 25.0),
-              _aboutMeParagraph3(),
-              const SizedBox(height: 25.0),
-              _aboutMeParagraph4(),
-              const SizedBox(height: 25.0),
-              _recentTech(context)
-            ],
-          ),
-        ],
+      child: FadeAnimation(
+        animationKey: UniqueKey(),
+        delay: const Duration(milliseconds: 950),
+        child: Column(
+          children: <Widget>[
+            const SectionTitle(
+              number: SectionTitleData.sectionNumber1,
+              title: SectionTitleData.section1Title,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                _aboutMeParagraph1(),
+                const SizedBox(height: 25.0),
+                _aboutMeParagraph2(),
+                const SizedBox(height: 25.0),
+                _aboutMeParagraph3(),
+                const SizedBox(height: 25.0),
+                _aboutMeParagraph4(),
+                const SizedBox(height: 25.0),
+                _recentTech(context)
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
