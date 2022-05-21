@@ -21,7 +21,7 @@ class About extends StatelessWidget {
                   width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
               FadeAnimation(
                 animationKey: UniqueKey(),
-                delay: const Duration(milliseconds: 950),
+                delay: const Duration(milliseconds: 1000),
                 child: const MyPicture(),
               ),
             ],

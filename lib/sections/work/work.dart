@@ -25,6 +25,7 @@ class Work extends StatelessWidget {
         children: <Widget>[
           SlideAnimation(
             animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 50),
             child: const SectionTitle(
               number: SectionTitleData.sectionNumber2,
               title: SectionTitleData.section2Title,
@@ -32,16 +33,19 @@ class Work extends StatelessWidget {
           ),
           FadeAnimation(
             animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 100),
             child: const KcfTechnologies(),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 100),
             child: const Volvo(),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 100),
             child: const Mule(),
           ),
         ],

@@ -21,7 +21,7 @@ class AboutMe extends StatelessWidget {
         children: <Widget>[
           SlideAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 950),
+            delay: const Duration(milliseconds: 1000),
             child: const SectionTitle(
               number: SectionTitleData.sectionNumber1,
               title: SectionTitleData.section1Title,
@@ -29,7 +29,7 @@ class AboutMe extends StatelessWidget {
           ),
           FadeAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 950),
+            delay: const Duration(milliseconds: 1100),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
