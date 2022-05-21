@@ -12,9 +12,6 @@ import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 
 class Home extends StatelessWidget {
-  static final List<GlobalKey> animationKeys =
-      List.generate(5, (index) => GlobalKey());
-
   static final List<GlobalKey> dataKeys =
       List.generate(4, (index) => GlobalKey());
 
@@ -54,8 +51,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             SlideAnimation(
-              animationKey: animationKeys[0],
-              delay: const Duration(milliseconds: 250),
+              animationKey: ButtonData.button1Title,
               child: MenuButtton(
                 dataKey: dataKeys[0],
                 buttonNumber: ButtonData.buttonNumber1,
@@ -64,8 +60,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: animationKeys[1],
-              delay: const Duration(milliseconds: 500),
+              animationKey: ButtonData.button2Title,
+              delay: const Duration(milliseconds: 50),
               child: MenuButtton(
                 dataKey: dataKeys[1],
                 buttonNumber: ButtonData.buttonNumber2,
@@ -74,8 +70,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: animationKeys[2],
-              delay: const Duration(milliseconds: 750),
+              animationKey: ButtonData.button3Title,
+              delay: const Duration(milliseconds: 100),
               child: MenuButtton(
                 dataKey: dataKeys[2],
                 buttonNumber: ButtonData.buttonNumber3,
@@ -84,8 +80,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: animationKeys[3],
-              delay: const Duration(milliseconds: 1000),
+              animationKey: ButtonData.button4Title,
+              delay: const Duration(milliseconds: 150),
               child: MenuButtton(
                 dataKey: dataKeys[3],
                 buttonNumber: ButtonData.buttonNumber4,
@@ -94,8 +90,8 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 12.0),
             SlideAnimation(
-              animationKey: animationKeys[4],
-              delay: const Duration(milliseconds: 1250),
+              animationKey: ButtonData.resume,
+              delay: const Duration(milliseconds: 200),
               child: OutlinedButton(
                 style: ButtonStyles.resume,
                 child: const Text(
