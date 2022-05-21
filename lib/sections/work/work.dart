@@ -3,8 +3,10 @@ import 'package:personal_website/data/text.dart';
 import 'package:personal_website/sections/work/kcf_technologies.dart';
 import 'package:personal_website/sections/work/mule.dart';
 import 'package:personal_website/sections/work/volvo.dart';
+import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
+import 'package:personal_website/widgets/slide_animation.dart';
 
 class Work extends StatelessWidget {
   const Work({Key? key}) : super(key: key);
@@ -20,16 +22,28 @@ class Work extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          SectionTitle(
-            number: SectionTitleData.sectionNumber2,
-            title: SectionTitleData.section2Title,
+        children: <Widget>[
+          SlideAnimation(
+            animationKey: UniqueKey(),
+            child: const SectionTitle(
+              number: SectionTitleData.sectionNumber2,
+              title: SectionTitleData.section2Title,
+            ),
           ),
-          KcfTechnologies(),
-          SizedBox(height: 32.0),
-          Volvo(),
-          SizedBox(height: 32.0),
-          Mule(),
+          FadeAnimation(
+            animationKey: UniqueKey(),
+            child: const KcfTechnologies(),
+          ),
+          const SizedBox(height: 32.0),
+          FadeAnimation(
+            animationKey: UniqueKey(),
+            child: const Volvo(),
+          ),
+          const SizedBox(height: 32.0),
+          FadeAnimation(
+            animationKey: UniqueKey(),
+            child: const Mule(),
+          ),
         ],
       ),
     );

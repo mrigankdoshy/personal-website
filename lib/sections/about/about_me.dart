@@ -8,6 +8,7 @@ import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/recent_tech.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
+import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMe extends StatelessWidget {
@@ -16,16 +17,20 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      child: FadeAnimation(
-        animationKey: UniqueKey(),
-        delay: const Duration(milliseconds: 950),
-        child: Column(
-          children: <Widget>[
-            const SectionTitle(
+      child: Column(
+        children: <Widget>[
+          SlideAnimation(
+            animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 950),
+            child: const SectionTitle(
               number: SectionTitleData.sectionNumber1,
               title: SectionTitleData.section1Title,
             ),
-            Column(
+          ),
+          FadeAnimation(
+            animationKey: UniqueKey(),
+            delay: const Duration(milliseconds: 950),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 _aboutMeParagraph1(),
@@ -39,8 +44,8 @@ class AboutMe extends StatelessWidget {
                 _recentTech(context)
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
