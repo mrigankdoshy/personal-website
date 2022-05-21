@@ -15,6 +15,7 @@ dependencies:
   url_launcher: ^6.0.20
   auto_size_text: ^3.0.0
   font_awesome_flutter: ^10.1.0
+  auto_animated: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -45,4 +46,3 @@ flutter:
         - asset: fonts/SFMono-RegularItalic.ttf
         - asset: fonts/SFMono-Semibold.ttf
         - asset: fonts/SFMono-SemiboldItalic.ttf
-
