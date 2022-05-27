@@ -15,7 +15,8 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+      padding: EdgeInsets.symmetric(
+          vertical: ResponsiveWidget.isSmallScreen(context) ? 128.0 : 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -44,6 +45,8 @@ class Intro extends StatelessWidget {
                   delay: const Duration(milliseconds: 850),
                   child: _nameAndTitle(),
                 ),
+                SizedBox(
+                    height: ResponsiveWidget.isSmallScreen(context) ? 8 : 0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 900),
@@ -62,9 +65,7 @@ class Intro extends StatelessWidget {
       TextSpan(
         style: TextStyles.paragraph,
         children: <TextSpan>[
-          const TextSpan(
-            text: IntroData.about,
-          ),
+          const TextSpan(text: IntroData.about),
           TextSpan(
             text: WorkData.kcf,
             style: TextStyles.highlightParagraph,
@@ -75,6 +76,8 @@ class Intro extends StatelessWidget {
           ),
         ],
       ),
+      minFontSize: 12,
+      stepGranularity: 4,
       maxLines: 5,
     );
   }
@@ -83,6 +86,7 @@ class Intro extends StatelessWidget {
     return const AutoSizeText(
       IntroData.greeting,
       style: TextStyles.greeting,
+      minFontSize: 16,
       maxLines: 1,
     );
   }
@@ -94,6 +98,7 @@ class Intro extends StatelessWidget {
         const AutoSizeText(
           IntroData.name,
           style: TextStyles.headline1,
+          minFontSize: 32,
           maxLines: 1,
         ),
         Container(
@@ -101,6 +106,7 @@ class Intro extends StatelessWidget {
           child: const AutoSizeText(
             IntroData.title,
             style: TextStyles.headline2,
+            minFontSize: 24,
             maxLines: 1,
           ),
         ),

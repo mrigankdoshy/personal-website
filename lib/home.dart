@@ -145,7 +145,6 @@ class Home extends StatelessWidget {
                 direction: Axis.vertical,
                 runAlignment: WrapAlignment.center,
                 crossAxisAlignment: WrapCrossAlignment.center,
-                // alignment: WrapAlignment.center,
                 children: <Widget>[
                   MenuButtton(
                     dataKey: dataKeys[0],
