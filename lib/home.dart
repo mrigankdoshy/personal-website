@@ -20,24 +20,33 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimateIfVisibleWrapper(
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverAppBar(
-              floating: true,
-              flexibleSpace: _appBar(),
-              backgroundColor: AppColors.backgroundBlue,
-              expandedHeight: 90,
-            ),
-            SliverToBoxAdapter(
-              child: ResponsiveWidget(
-                largeScreen: _buildLargeScreen(context),
-                mediumScreen: _buildMediumScreen(context),
-                smallScreen: _buildSmallScreen(context),
+      drawer: _buildDrawer(context),
+      body: Builder(
+        builder: (context) => AnimateIfVisibleWrapper(
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverAppBar(
+                floating: true,
+                flexibleSpace:
+                    !ResponsiveWidget.isSmallScreen(context) ? _appBar() : null,
+                backgroundColor: AppColors.backgroundBlue,
+                expandedHeight: 90,
+                leading: ResponsiveWidget.isSmallScreen(context)
+                    ? IconButton(
+                        icon: const Icon(Icons.drag_handle_rounded, size: 32),
+                        onPressed: () => Scaffold.of(context).openDrawer())
+                    : null,
               ),
-            ),
-          ],
+              SliverToBoxAdapter(
+                child: ResponsiveWidget(
+                  largeScreen: _buildLargeScreen(context),
+                  mediumScreen: _buildMediumScreen(context),
+                  smallScreen: _buildSmallScreen(context),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -124,6 +133,50 @@ class Home extends StatelessWidget {
         Footer(key: dataKeys[3]),
       ],
     );
+  }
+
+  Drawer? _buildDrawer(BuildContext context) {
+    return ResponsiveWidget.isSmallScreen(context)
+        ? Drawer(
+            child: Wrap(
+              spacing: 36.0,
+              direction: Axis.vertical,
+              runAlignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              children: <Widget>[
+                MenuButtton(
+                  dataKey: dataKeys[0],
+                  buttonNumber: ButtonData.buttonNumber1,
+                  buttonTitle: ButtonData.button1Title,
+                ),
+                MenuButtton(
+                  dataKey: dataKeys[1],
+                  buttonNumber: ButtonData.buttonNumber2,
+                  buttonTitle: ButtonData.button2Title,
+                ),
+                MenuButtton(
+                  dataKey: dataKeys[2],
+                  buttonNumber: ButtonData.buttonNumber3,
+                  buttonTitle: ButtonData.button3Title,
+                ),
+                MenuButtton(
+                  dataKey: dataKeys[3],
+                  buttonNumber: ButtonData.buttonNumber4,
+                  buttonTitle: ButtonData.button4Title,
+                ),
+                OutlinedButton(
+                  style: ButtonStyles.resume,
+                  child: const Text(
+                    ButtonData.resume,
+                    style: TextStyles.navBarButtonNumber,
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          )
+        : null;
   }
 
   Widget _buildLargeScreen(BuildContext context) {
