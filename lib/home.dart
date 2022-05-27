@@ -31,7 +31,8 @@ class Home extends StatelessWidget {
                 flexibleSpace:
                     !ResponsiveWidget.isSmallScreen(context) ? _appBar() : null,
                 backgroundColor: AppColors.backgroundBlue,
-                expandedHeight: 90,
+                expandedHeight:
+                    !ResponsiveWidget.isSmallScreen(context) ? 90 : 0,
                 leading: ResponsiveWidget.isSmallScreen(context)
                     ? IconButton(
                         icon: const Icon(Icons.drag_handle_rounded, size: 32),

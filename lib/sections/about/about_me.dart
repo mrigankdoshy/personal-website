@@ -71,6 +71,7 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
+      presetFontSizes: const [20, 16, 12],
       maxLines: 6,
     );
   }
@@ -96,6 +97,7 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
+      presetFontSizes: const [20, 16, 12],
       maxLines: 5,
     );
   }
@@ -104,6 +106,7 @@ class AboutMe extends StatelessWidget {
     return const AutoSizeText(
       AboutMeData.paragraph3,
       style: TextStyles.paragraph,
+      presetFontSizes: [20, 16, 12],
       maxLines: 5,
     );
   }
@@ -112,6 +115,7 @@ class AboutMe extends StatelessWidget {
     return const AutoSizeText(
       AboutMeData.paragraph4,
       style: TextStyles.paragraph,
+      presetFontSizes: [20, 16, 12],
       maxLines: 2,
     );
   }

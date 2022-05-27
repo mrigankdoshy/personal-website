@@ -19,13 +19,20 @@ class About extends StatelessWidget {
               const AboutMe(),
               SizedBox(
                   width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
-              FadeAnimation(
-                animationKey: UniqueKey(),
-                delay: const Duration(milliseconds: 1000),
-                child: const MyPicture(),
-              ),
+              if (!ResponsiveWidget.isSmallScreen(context))
+                FadeAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 1000),
+                  child: const MyPicture(),
+                ),
             ],
           ),
+          if (ResponsiveWidget.isSmallScreen(context))
+            FadeAnimation(
+              animationKey: UniqueKey(),
+              delay: const Duration(milliseconds: 1000),
+              child: const MyPicture(),
+            ),
         ],
       ),
     );

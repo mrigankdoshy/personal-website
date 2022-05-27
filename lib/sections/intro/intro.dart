@@ -76,8 +76,7 @@ class Intro extends StatelessWidget {
           ),
         ],
       ),
-      minFontSize: 12,
-      stepGranularity: 4,
+      presetFontSizes: const [20, 16, 12],
       maxLines: 5,
     );
   }
