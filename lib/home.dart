@@ -138,42 +138,45 @@ class Home extends StatelessWidget {
   Drawer? _buildDrawer(BuildContext context) {
     return ResponsiveWidget.isSmallScreen(context)
         ? Drawer(
-            child: Wrap(
-              spacing: 36.0,
-              direction: Axis.vertical,
-              runAlignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              alignment: WrapAlignment.center,
-              children: <Widget>[
-                MenuButtton(
-                  dataKey: dataKeys[0],
-                  buttonNumber: ButtonData.buttonNumber1,
-                  buttonTitle: ButtonData.button1Title,
-                ),
-                MenuButtton(
-                  dataKey: dataKeys[1],
-                  buttonNumber: ButtonData.buttonNumber2,
-                  buttonTitle: ButtonData.button2Title,
-                ),
-                MenuButtton(
-                  dataKey: dataKeys[2],
-                  buttonNumber: ButtonData.buttonNumber3,
-                  buttonTitle: ButtonData.button3Title,
-                ),
-                MenuButtton(
-                  dataKey: dataKeys[3],
-                  buttonNumber: ButtonData.buttonNumber4,
-                  buttonTitle: ButtonData.button4Title,
-                ),
-                OutlinedButton(
-                  style: ButtonStyles.resume,
-                  child: const Text(
-                    ButtonData.resume,
-                    style: TextStyles.navBarButtonNumber,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 128.0),
+              child: Wrap(
+                spacing: 32.0,
+                direction: Axis.vertical,
+                runAlignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                // alignment: WrapAlignment.center,
+                children: <Widget>[
+                  MenuButtton(
+                    dataKey: dataKeys[0],
+                    buttonNumber: ButtonData.buttonNumber1,
+                    buttonTitle: ButtonData.button1Title,
                   ),
-                  onPressed: () {},
-                ),
-              ],
+                  MenuButtton(
+                    dataKey: dataKeys[1],
+                    buttonNumber: ButtonData.buttonNumber2,
+                    buttonTitle: ButtonData.button2Title,
+                  ),
+                  MenuButtton(
+                    dataKey: dataKeys[2],
+                    buttonNumber: ButtonData.buttonNumber3,
+                    buttonTitle: ButtonData.button3Title,
+                  ),
+                  MenuButtton(
+                    dataKey: dataKeys[3],
+                    buttonNumber: ButtonData.buttonNumber4,
+                    buttonTitle: ButtonData.button4Title,
+                  ),
+                  OutlinedButton(
+                    style: ButtonStyles.resume,
+                    child: const Text(
+                      ButtonData.resume,
+                      style: TextStyles.navBarButtonNumber,
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
           )
         : null;
