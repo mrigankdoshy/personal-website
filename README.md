@@ -24,7 +24,7 @@ This project is currently a work in progress - mainly around being responsive to
 
 ## 🚀 Building and Running
 
-Make sure you have <a href="https://flutter.dev" target="_blank">Flutter</a> `2.8.1` or higher and Dart `2.15.1` or higher installed. 
+Make sure you have <a href="https://flutter.dev" target="_blank">Flutter</a> `2.8.1` or higher and <a href="https://dart.dev" target="_blank">Dart</a>  `2.15.1` or higher installed. 
 
 Install dependencies with:
 
