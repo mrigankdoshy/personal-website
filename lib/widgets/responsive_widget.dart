@@ -12,19 +12,6 @@ class ResponsiveWidget extends StatelessWidget {
     this.smallScreen,
   }) : super(key: key);
 
-  static bool isSmallScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width < 768;
-  }
-
-  static bool isLargeScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width > 768;
-  }
-
-  static bool isMediumScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width > 768 &&
-        MediaQuery.of(context).size.width < 1200;
-  }
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -38,5 +25,22 @@ class ResponsiveWidget extends StatelessWidget {
         }
       },
     );
+  }
+
+  static bool isAtLeastLargeScreen(BuildContext context) {
+    return isLargeScreen(context) && !isMediumScreen(context);
+  }
+
+  static bool isLargeScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width > 768;
+  }
+
+  static bool isMediumScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width > 768 &&
+        MediaQuery.of(context).size.width < 1200;
+  }
+
+  static bool isSmallScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width < 768;
   }
 }

@@ -20,8 +20,7 @@ class Intro extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          if (ResponsiveWidget.isLargeScreen(context) &&
-              !ResponsiveWidget.isMediumScreen(context))
+          if (ResponsiveWidget.isAtLeastLargeScreen(context))
             FadeAnimation(
               animationKey: UniqueKey(),
               delay: const Duration(milliseconds: 750),
@@ -30,7 +29,8 @@ class Intro extends StatelessWidget {
                 scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
               ),
             ),
-          SizedBox(width: !ResponsiveWidget.isSmallScreen(context) ? 30 : 0),
+          SizedBox(
+              width: ResponsiveWidget.isAtLeastLargeScreen(context) ? 30 : 0),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
