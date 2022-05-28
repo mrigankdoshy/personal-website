@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
@@ -32,13 +33,13 @@ class AboutMe extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _aboutMeParagraph1(context),
+                _aboutMeParagraph1(),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph2(context),
+                _aboutMeParagraph2(),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph3(context),
+                _aboutMeParagraph3(),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph4(context),
+                _aboutMeParagraph4(),
                 const SizedBox(height: 25.0),
                 _recentTech(context)
               ],
@@ -49,19 +50,17 @@ class AboutMe extends StatelessWidget {
     );
   }
 
-  Widget _aboutMeParagraph1(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: TextStyles.paragraph.copyWith(
-            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+  Widget _aboutMeParagraph1() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
         children: <TextSpan>[
           const TextSpan(
             text: AboutMeData.paragraph1Part1,
           ),
           TextSpan(
             text: WorkData.mule,
-            style: TextStyles.highlightParagraph.copyWith(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+            style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.mule);
@@ -72,22 +71,21 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
+      maxLines: 6,
     );
   }
 
-  Widget _aboutMeParagraph2(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: TextStyles.paragraph.copyWith(
-            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+  Widget _aboutMeParagraph2() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
         children: <TextSpan>[
           const TextSpan(
             text: AboutMeData.paragraph2Part1,
           ),
           TextSpan(
             text: WorkData.pennState,
-            style: TextStyles.highlightParagraph.copyWith(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+            style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.pennState);
@@ -98,24 +96,23 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
+      maxLines: 5,
     );
   }
 
-  Widget _aboutMeParagraph3(BuildContext context) {
-    return Text(
+  Widget _aboutMeParagraph3() {
+    return const AutoSizeText(
       AboutMeData.paragraph3,
-      style: TextStyles.paragraph.copyWith(
-        fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20,
-      ),
+      style: TextStyles.paragraph,
+      maxLines: 5,
     );
   }
 
-  Widget _aboutMeParagraph4(BuildContext context) {
-    return Text(
+  Widget _aboutMeParagraph4() {
+    return const AutoSizeText(
       AboutMeData.paragraph4,
-      style: TextStyles.paragraph.copyWith(
-        fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20,
-      ),
+      style: TextStyles.paragraph,
+      maxLines: 2,
     );
   }
 

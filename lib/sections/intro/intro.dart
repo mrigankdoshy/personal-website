@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
@@ -19,7 +20,8 @@ class Intro extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context))
+          if (ResponsiveWidget.isLargeScreen(context) &&
+              !ResponsiveWidget.isMediumScreen(context))
             FadeAnimation(
               animationKey: UniqueKey(),
               delay: const Duration(milliseconds: 750),
@@ -36,20 +38,20 @@ class Intro extends StatelessWidget {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 750),
-                  child: _greeting(context),
+                  child: _greeting(),
                 ),
                 const SizedBox(height: 25.0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 850),
-                  child: _nameAndTitle(context),
+                  child: _nameAndTitle(),
                 ),
                 SizedBox(
                     height: ResponsiveWidget.isSmallScreen(context) ? 8 : 0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 900),
-                  child: _about(context),
+                  child: _about(),
                 ),
               ],
             ),
@@ -59,17 +61,15 @@ class Intro extends StatelessWidget {
     );
   }
 
-  Widget _about(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: TextStyles.paragraph.copyWith(
-            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+  Widget _about() {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.paragraph,
         children: <TextSpan>[
           const TextSpan(text: IntroData.about),
           TextSpan(
             text: WorkData.kcf,
-            style: TextStyles.highlightParagraph.copyWith(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
+            style: TextStyles.highlightParagraph,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.kcfTechnologies);
@@ -77,43 +77,33 @@ class Intro extends StatelessWidget {
           ),
         ],
       ),
+      maxLines: 5,
     );
   }
 
-  Widget _greeting(BuildContext context) {
-    return Text(
+  Widget _greeting() {
+    return const AutoSizeText(
       IntroData.greeting,
-      style: TextStyles.greeting.copyWith(
-        fontSize: ResponsiveWidget.isSmallScreen(context) ? 15 : 17,
-      ),
+      style: TextStyles.greeting,
+      maxLines: 1,
     );
   }
 
-  Widget _nameAndTitle(BuildContext context) {
+  Widget _nameAndTitle() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const AutoSizeText(
           IntroData.name,
-          style: TextStyles.headline1.copyWith(
-            fontSize: ResponsiveWidget.isSmallScreen(context)
-                ? 32
-                : ResponsiveWidget.isMediumScreen(context)
-                    ? 48
-                    : 72,
-          ),
+          style: TextStyles.headline1,
+          maxLines: 1,
         ),
         Container(
           transform: Matrix4.translationValues(0.0, -12.0, 0.0),
-          child: Text(
+          child: const AutoSizeText(
             IntroData.title,
-            style: TextStyles.headline2.copyWith(
-              fontSize: ResponsiveWidget.isSmallScreen(context)
-                  ? 24
-                  : ResponsiveWidget.isMediumScreen(context)
-                      ? 42
-                      : 64,
-            ),
+            style: TextStyles.headline2,
+            maxLines: 1,
           ),
         ),
       ],

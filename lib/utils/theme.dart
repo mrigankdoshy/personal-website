@@ -65,7 +65,7 @@ class TextStyles {
     fontFamily: 'Calibre',
     fontWeight: FontWeight.bold,
     color: AppColors.mediumGrey1,
-    fontSize: 64,
+    fontSize: 72,
   );
 
   // Section Titles
