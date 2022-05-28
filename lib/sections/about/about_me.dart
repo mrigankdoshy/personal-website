@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
@@ -33,13 +32,13 @@ class AboutMe extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _aboutMeParagraph1(),
+                _aboutMeParagraph1(context),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph2(),
+                _aboutMeParagraph2(context),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph3(),
+                _aboutMeParagraph3(context),
                 const SizedBox(height: 25.0),
-                _aboutMeParagraph4(),
+                _aboutMeParagraph4(context),
                 const SizedBox(height: 25.0),
                 _recentTech(context)
               ],
@@ -50,17 +49,19 @@ class AboutMe extends StatelessWidget {
     );
   }
 
-  Widget _aboutMeParagraph1() {
-    return AutoSizeText.rich(
-      TextSpan(
-        style: TextStyles.paragraph,
+  Widget _aboutMeParagraph1(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyles.paragraph.copyWith(
+            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
         children: <TextSpan>[
           const TextSpan(
             text: AboutMeData.paragraph1Part1,
           ),
           TextSpan(
             text: WorkData.mule,
-            style: TextStyles.highlightParagraph,
+            style: TextStyles.highlightParagraph.copyWith(
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.mule);
@@ -71,22 +72,22 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
-      presetFontSizes: const [20, 16, 12],
-      maxLines: 6,
     );
   }
 
-  Widget _aboutMeParagraph2() {
-    return AutoSizeText.rich(
-      TextSpan(
-        style: TextStyles.paragraph,
+  Widget _aboutMeParagraph2(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyles.paragraph.copyWith(
+            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
         children: <TextSpan>[
           const TextSpan(
             text: AboutMeData.paragraph2Part1,
           ),
           TextSpan(
             text: WorkData.pennState,
-            style: TextStyles.highlightParagraph,
+            style: TextStyles.highlightParagraph.copyWith(
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.pennState);
@@ -97,26 +98,24 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
-      presetFontSizes: const [20, 16, 12],
-      maxLines: 5,
     );
   }
 
-  Widget _aboutMeParagraph3() {
-    return const AutoSizeText(
+  Widget _aboutMeParagraph3(BuildContext context) {
+    return Text(
       AboutMeData.paragraph3,
-      style: TextStyles.paragraph,
-      presetFontSizes: [20, 16, 12],
-      maxLines: 5,
+      style: TextStyles.paragraph.copyWith(
+        fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20,
+      ),
     );
   }
 
-  Widget _aboutMeParagraph4() {
-    return const AutoSizeText(
+  Widget _aboutMeParagraph4(BuildContext context) {
+    return Text(
       AboutMeData.paragraph4,
-      style: TextStyles.paragraph,
-      presetFontSizes: [20, 16, 12],
-      maxLines: 2,
+      style: TextStyles.paragraph.copyWith(
+        fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20,
+      ),
     );
   }
 
@@ -128,9 +127,9 @@ class AboutMe extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            RecentTech(title: "React"),
-            RecentTech(title: "TypeScript"),
-            RecentTech(title: "CSS"),
+            RecentTech(title: TechData.react),
+            RecentTech(title: TechData.typescript),
+            RecentTech(title: TechData.css),
           ],
         ),
         SizedBox(
@@ -138,9 +137,9 @@ class AboutMe extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            RecentTech(title: "Flutter"),
-            RecentTech(title: "Firebase"),
-            RecentTech(title: "C#"),
+            RecentTech(title: TechData.flutter),
+            RecentTech(title: TechData.firebase),
+            RecentTech(title: TechData.csharp),
           ],
         ),
       ],

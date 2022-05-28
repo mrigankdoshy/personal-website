@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
@@ -37,20 +36,20 @@ class Intro extends StatelessWidget {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 750),
-                  child: _greeting(),
+                  child: _greeting(context),
                 ),
                 const SizedBox(height: 25.0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 850),
-                  child: _nameAndTitle(),
+                  child: _nameAndTitle(context),
                 ),
                 SizedBox(
                     height: ResponsiveWidget.isSmallScreen(context) ? 8 : 0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 900),
-                  child: _about(),
+                  child: _about(context),
                 ),
               ],
             ),
@@ -60,15 +59,17 @@ class Intro extends StatelessWidget {
     );
   }
 
-  Widget _about() {
-    return AutoSizeText.rich(
-      TextSpan(
-        style: TextStyles.paragraph,
+  Widget _about(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyles.paragraph.copyWith(
+            fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
         children: <TextSpan>[
           const TextSpan(text: IntroData.about),
           TextSpan(
             text: WorkData.kcf,
-            style: TextStyles.highlightParagraph,
+            style: TextStyles.highlightParagraph.copyWith(
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 17 : 20),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 launch(Url.kcfTechnologies);
@@ -76,37 +77,43 @@ class Intro extends StatelessWidget {
           ),
         ],
       ),
-      presetFontSizes: const [20, 16, 12],
-      maxLines: 5,
     );
   }
 
-  Widget _greeting() {
-    return const AutoSizeText(
+  Widget _greeting(BuildContext context) {
+    return Text(
       IntroData.greeting,
-      style: TextStyles.greeting,
-      minFontSize: 16,
-      maxLines: 1,
+      style: TextStyles.greeting.copyWith(
+        fontSize: ResponsiveWidget.isSmallScreen(context) ? 15 : 17,
+      ),
     );
   }
 
-  Widget _nameAndTitle() {
+  Widget _nameAndTitle(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AutoSizeText(
+        Text(
           IntroData.name,
-          style: TextStyles.headline1,
-          minFontSize: 32,
-          maxLines: 1,
+          style: TextStyles.headline1.copyWith(
+            fontSize: ResponsiveWidget.isSmallScreen(context)
+                ? 32
+                : ResponsiveWidget.isMediumScreen(context)
+                    ? 48
+                    : 72,
+          ),
         ),
         Container(
           transform: Matrix4.translationValues(0.0, -12.0, 0.0),
-          child: const AutoSizeText(
+          child: Text(
             IntroData.title,
-            style: TextStyles.headline2,
-            minFontSize: 24,
-            maxLines: 1,
+            style: TextStyles.headline2.copyWith(
+              fontSize: ResponsiveWidget.isSmallScreen(context)
+                  ? 24
+                  : ResponsiveWidget.isMediumScreen(context)
+                      ? 42
+                      : 64,
+            ),
           ),
         ),
       ],

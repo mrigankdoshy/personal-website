@@ -1,21 +1,3 @@
-class SectionTitleData {
-  static const sectionNumber1 = "01.";
-  static const sectionNumber2 = "02.";
-  static const sectionNumber3 = "03.";
-
-  static const section1Title = "About me";
-  static const section2Title = "Where I've worked";
-  static const section3Title = "Some things I've built";
-}
-
-class IntroData {
-  static const greeting = "Hey there, I'm";
-  static const name = "Mrigank Doshy";
-  static const title = "Developer and Designer";
-  static const about =
-      "I'm an entrepreneur and software engineer, with a passion for developing innovative solutions. Currently, I'm focused on building sustainable and comprehensive machine health centered products at ";
-}
-
 class AboutMeData {
   static const paragraph1Part1 =
       "After about four years of trying out different things, I have come to realize that I'm really good at two things: building products and getting them out into the world. Most recently, I co-founded and developed ";
@@ -32,17 +14,42 @@ class AboutMeData {
       "Here are a few technologies I've been working with recently:";
 }
 
-class WorkData {
-  // Companies
-  static const kcf = "KCF Technologies";
-  static const mule = "Mule";
-  static const pennState = "Penn State";
-  static const volvo = "Volvo";
+class ButtonData {
+  static const buttonNumber1 = "01.";
+  static const buttonNumber2 = "02.";
+  static const buttonNumber3 = "03.";
+  static const buttonNumber4 = "04.";
 
-  // Titles
-  static const softwareEngineer = "Software Engineer";
-  static const capstone = "Capstone Project";
-  static const cofounder = "Co-Founder";
+  static const button1Title = "About";
+  static const button2Title = "Experience";
+  static const button3Title = "Projects";
+  static const button4Title = "Contact";
+
+  static const showLess = "Show Less";
+  static const showMore = "Show More";
+  static const resume = "Resume";
+}
+
+class FooterData {
+  static const footerTextPart1 = "I'm Goa-bred,";
+  static const footerTextPart2 = "passionately curious";
+  static const footerTextPart3 = "and welcome bribes in the form of pizza";
+
+  static const contactPart1 = "Let's get in touch! I prefer ";
+  static const contactPart2 = "Emails";
+  static const contactPart3 = " and ";
+  static const contactPart4 = "Instagram DMs";
+  static const contactPart5 = ".";
+
+  static const copyright = "© 2022 by Mrigank Doshy";
+}
+
+class IntroData {
+  static const greeting = "Hey there, I'm";
+  static const name = "Mrigank Doshy";
+  static const title = "Developer and Designer";
+  static const about =
+      "I'm an entrepreneur and software engineer, with a passion for developing innovative solutions. Currently, I'm focused on building sustainable and comprehensive machine health centered products at ";
 }
 
 class KcfData {
@@ -67,29 +74,6 @@ class KcfData {
 
   static const point4 =
       "Communicate and collaborate with multi-disciplinary teams of engineers, designers and product managers to ensure thoughtful and coherent user experiences";
-}
-
-class VolvoData {
-  static const startDate = "January 2021";
-  static const endDate = "May 2021";
-
-  static const point1Part1 = "Explored an automated link using ";
-  static const point1Part2 =
-      " Python library, to convert 2D schematics to 3D CAD Models in ";
-  static const point1Part3 =
-      ", eliminating the need to manually rebuild a 3D model for any change in the 2D schematic";
-
-  static const point2 =
-      "Designed and developed an algorithm that suggests a network path for cables and fuel lines based on space boundary available and different environmental conditions";
-
-  static const point3 =
-      "Helped engineers reroute cables so that the wires take the most efficient paths, hence reducing the repetitive and time consuming process currently employed";
-
-  static const point4Part1 = "The ";
-  static const point4Part2 =
-      " is now being implemented in the Volvo System by an internal team";
-
-  static const project = "project";
 }
 
 class MuleData {
@@ -117,6 +101,16 @@ class MuleData {
       " (http client package) and applied dependency injection in the client to request for and match with other users";
 }
 
+class SectionTitleData {
+  static const sectionNumber1 = "01.";
+  static const sectionNumber2 = "02.";
+  static const sectionNumber3 = "03.";
+
+  static const section1Title = "About me";
+  static const section2Title = "Where I've worked";
+  static const section3Title = "Some things I've built";
+}
+
 class TechData {
   static const react = "React";
   static const css = "CSS";
@@ -137,34 +131,42 @@ class TechData {
   static const dio = "Dio";
   static const ios = "iOS";
   static const android = "Android";
+  static const typescript = "TypeScript";
+  static const firebase = "Firebase";
 }
 
-class FooterData {
-  static const footerTextPart1 = "I'm Goa-bred,";
-  static const footerTextPart2 = "passionately curious";
-  static const footerTextPart3 = "and welcome bribes in the form of pizza";
+class VolvoData {
+  static const startDate = "January 2021";
+  static const endDate = "May 2021";
 
-  static const contactPart1 = "Let's get in touch! I prefer ";
-  static const contactPart2 = "Emails";
-  static const contactPart3 = " and ";
-  static const contactPart4 = "Instagram DMs";
-  static const contactPart5 = ".";
+  static const point1Part1 = "Explored an automated link using ";
+  static const point1Part2 =
+      " Python library, to convert 2D schematics to 3D CAD Models in ";
+  static const point1Part3 =
+      ", eliminating the need to manually rebuild a 3D model for any change in the 2D schematic";
 
-  static const copyright = "© 2022 by Mrigank Doshy";
+  static const point2 =
+      "Designed and developed an algorithm that suggests a network path for cables and fuel lines based on space boundary available and different environmental conditions";
+
+  static const point3 =
+      "Helped engineers reroute cables so that the wires take the most efficient paths, hence reducing the repetitive and time consuming process currently employed";
+
+  static const point4Part1 = "The ";
+  static const point4Part2 =
+      " is now being implemented in the Volvo System by an internal team";
+
+  static const project = "project";
 }
 
-class ButtonData {
-  static const buttonNumber1 = "01.";
-  static const buttonNumber2 = "02.";
-  static const buttonNumber3 = "03.";
-  static const buttonNumber4 = "04.";
+class WorkData {
+  // Companies
+  static const kcf = "KCF Technologies";
+  static const mule = "Mule";
+  static const pennState = "Penn State";
+  static const volvo = "Volvo";
 
-  static const button1Title = "About";
-  static const button2Title = "Experience";
-  static const button3Title = "Projects";
-  static const button4Title = "Contact";
-
-  static const showLess = "Show Less";
-  static const showMore = "Show More";
-  static const resume = "Resume";
+  // Titles
+  static const softwareEngineer = "Software Engineer";
+  static const capstone = "Capstone Project";
+  static const cofounder = "Co-Founder";
 }
