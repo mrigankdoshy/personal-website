@@ -15,6 +15,7 @@ class Work extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AutoSizeGroup pointGroup = AutoSizeGroup();
+    AutoSizeGroup titleGroup = AutoSizeGroup();
 
     return Padding(
       padding: EdgeInsets.only(
@@ -37,19 +38,20 @@ class Work extends StatelessWidget {
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: KcfTechnologies(pointGroup: pointGroup),
+            child:
+                KcfTechnologies(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: Volvo(pointGroup: pointGroup),
+            child: Volvo(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: Mule(pointGroup: pointGroup),
+            child: Mule(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
         ],
       ),

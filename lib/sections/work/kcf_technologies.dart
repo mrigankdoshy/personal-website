@@ -11,8 +11,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class KcfTechnologies extends StatelessWidget {
   final AutoSizeGroup pointGroup;
+  final AutoSizeGroup titleGroup;
 
-  const KcfTechnologies({Key? key, required this.pointGroup}) : super(key: key);
+  const KcfTechnologies({
+    Key? key,
+    required this.pointGroup,
+    required this.titleGroup,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +25,11 @@ class KcfTechnologies extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const WorkTitle(
+        WorkTitle(
           title: WorkData.softwareEngineer,
           company: WorkData.kcf,
           url: Url.kcfTechnologies,
+          group: titleGroup,
         ),
         const DateRange(start: KcfData.startDate, end: KcfData.endDate),
         const SizedBox(height: 8.0),

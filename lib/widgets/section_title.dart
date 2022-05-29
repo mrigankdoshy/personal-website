@@ -22,9 +22,9 @@ class SectionTitle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _sectionNumber(number),
-          const SizedBox(width: 20),
+          SizedBox(width: ResponsiveWidget.isSmallScreen(context) ? 10 : 20),
           _sectionTitle(title),
-          const SizedBox(width: 20),
+          SizedBox(width: ResponsiveWidget.isSmallScreen(context) ? 10 : 20),
           _line(context),
         ],
       ),
