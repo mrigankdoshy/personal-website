@@ -82,7 +82,7 @@ class _ProjectState extends State<Project> {
   }
 
   bool _containsUrl() {
-    return widget.url != "" ? true : false;
+    return widget.url != "";
   }
 
   Widget _description() {

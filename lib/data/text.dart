@@ -31,9 +31,11 @@ class ButtonData {
 }
 
 class FooterData {
-  static const footerTextPart1 = "I'm Goa-bred,";
-  static const footerTextPart2 = "passionately curious";
+  static const footerTextPart1 = "I'm Goa-bred,\n";
+  static const footerTextPart2 = "passionately curious,\n";
   static const footerTextPart3 = "and welcome bribes in the form of pizza";
+  static const footerTextPart3Alt1 = "and welcome bribes in the\n";
+  static const footerTextPart3Alt2 = "form of pizza";
 
   static const contactPart1 = "Let's get in touch! I prefer ";
   static const contactPart2 = "Emails";
