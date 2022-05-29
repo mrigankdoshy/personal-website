@@ -40,6 +40,8 @@ class _ProjectsState extends State<Projects> {
 
   @override
   Widget build(BuildContext context) {
+    bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+
     return Padding(
       padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
       child: Column(
@@ -54,41 +56,41 @@ class _ProjectsState extends State<Projects> {
               title: SectionTitleData.section3Title,
             ),
           ),
-          ResponsiveWidget.isSmallScreen(context)
-              ? LiveGrid.options(
-                  options: options,
-                  primary: true,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: _tempProjects.length,
-                  itemBuilder: (BuildContext context, int index,
-                      Animation<double> animation) {
-                    return _projectTile(context, index, animation);
-                  },
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-                    childAspectRatio: 1.35,
-                    mainAxisSpacing: 8.0,
-                    crossAxisSpacing: 8.0,
-                  ),
-                )
-              : LiveGrid.options(
-                  options: options,
-                  primary: true,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: _tempProjects.length,
-                  itemBuilder: (BuildContext context, int index,
-                      Animation<double> animation) {
-                    return _projectTile(context, index, animation);
-                  },
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    childAspectRatio: 1.35,
-                    mainAxisSpacing: 8.0,
-                    crossAxisSpacing: 8.0,
+          LiveGrid.options(
+            options: options,
+            primary: true,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: _tempProjects.length,
+            itemBuilder:
+                (BuildContext context, int index, Animation<double> animation) {
+              return FadeTransition(
+                opacity: Tween<double>(
+                  begin: 0,
+                  end: 1,
+                ).animate(
+                    CurvedAnimation(parent: animation, curve: Curves.easeOut)),
+                child: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: const Offset(0, -0.2),
+                    end: Offset.zero,
+                  ).animate(animation),
+                  child: Project(
+                    title: _projects[index]['title'],
+                    description: _projects[index]['description'],
+                    url: _projects[index]['url'],
+                    tags: _projects[index]['tags'],
                   ),
                 ),
+              );
+            },
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: isSmallScreen ? 1 : 3,
+              childAspectRatio: 1.35,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 8.0,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 48.0),
             child: Center(
@@ -137,27 +139,5 @@ class _ProjectsState extends State<Projects> {
       _projects = data["projects"];
       _tempProjects.addAll(_projects.getRange(0, condensedView));
     });
-  }
-
-  Widget _projectTile(
-      BuildContext context, int index, Animation<double> animation) {
-    return FadeTransition(
-      opacity: Tween<double>(
-        begin: 0,
-        end: 1,
-      ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
-      child: SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(0, -0.2),
-          end: Offset.zero,
-        ).animate(animation),
-        child: Project(
-          title: _projects[index]['title'],
-          description: _projects[index]['description'],
-          url: _projects[index]['url'],
-          tags: _projects[index]['tags'],
-        ),
-      ),
-    );
   }
 }
