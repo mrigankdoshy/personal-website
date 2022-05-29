@@ -10,7 +10,9 @@ import 'package:personal_website/widgets/work_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class KcfTechnologies extends StatelessWidget {
-  const KcfTechnologies({Key? key}) : super(key: key);
+  final AutoSizeGroup pointGroup;
+
+  const KcfTechnologies({Key? key, required this.pointGroup}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +80,7 @@ class KcfTechnologies extends StatelessWidget {
           ],
         ),
         maxLines: 3,
+        group: pointGroup,
       ),
     );
   }
@@ -101,6 +104,7 @@ class KcfTechnologies extends StatelessWidget {
           ],
         ),
         maxLines: 3,
+        group: pointGroup,
       ),
     );
   }
@@ -142,16 +146,20 @@ class KcfTechnologies extends StatelessWidget {
           ],
         ),
         maxLines: 3,
+        group: pointGroup,
       ),
     );
   }
 
   Widget _point4() {
-    return const WorkPoint(
-      data: AutoSizeText(
-        KcfData.point4,
-        style: TextStyles.point,
+    return WorkPoint(
+      data: AutoSizeText.rich(
+        const TextSpan(
+          text: KcfData.point4,
+          style: TextStyles.point,
+        ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }

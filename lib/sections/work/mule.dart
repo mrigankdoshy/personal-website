@@ -10,7 +10,9 @@ import 'package:personal_website/widgets/work_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Mule extends StatelessWidget {
-  const Mule({Key? key}) : super(key: key);
+  final AutoSizeGroup pointGroup;
+
+  const Mule({Key? key, required this.pointGroup}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +72,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
@@ -110,6 +113,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
@@ -141,6 +145,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 5,
+        group: pointGroup,
       ),
     );
   }
@@ -164,6 +169,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }

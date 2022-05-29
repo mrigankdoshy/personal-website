@@ -10,7 +10,9 @@ import 'package:personal_website/widgets/work_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Volvo extends StatelessWidget {
-  const Volvo({Key? key}) : super(key: key);
+  final AutoSizeGroup pointGroup;
+
+  const Volvo({Key? key, required this.pointGroup}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,26 +63,33 @@ class Volvo extends StatelessWidget {
           ],
         ),
         maxLines: 5,
+        group: pointGroup,
       ),
     );
   }
 
   Widget _point2() {
-    return const WorkPoint(
-      data: AutoSizeText(
-        VolvoData.point2,
-        style: TextStyles.point,
+    return WorkPoint(
+      data: AutoSizeText.rich(
+        const TextSpan(
+          text: VolvoData.point2,
+          style: TextStyles.point,
+        ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
 
   Widget _point3() {
-    return const WorkPoint(
-      data: AutoSizeText(
-        VolvoData.point3,
-        style: TextStyles.point,
+    return WorkPoint(
+      data: AutoSizeText.rich(
+        const TextSpan(
+          text: VolvoData.point3,
+          style: TextStyles.point,
+        ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
@@ -104,6 +113,7 @@ class Volvo extends StatelessWidget {
           ],
         ),
         maxLines: 2,
+        group: pointGroup,
       ),
     );
   }
