@@ -45,7 +45,7 @@ class _FooterState extends State<Footer> {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 250),
-                  child: _socialMedia(),
+                  child: _socialMedia(context),
                 ),
                 const SizedBox(height: 40.0),
                 FadeAnimation(
@@ -88,6 +88,7 @@ class _FooterState extends State<Footer> {
           ),
         ],
       ),
+      textAlign: TextAlign.center,
       maxLines: 2,
     );
   }
@@ -119,49 +120,51 @@ class _FooterState extends State<Footer> {
               : const TextSpan(text: FooterData.footerTextPart3),
         ],
       ),
-      maxLines: 4,
-      presetFontSizes: const [14, 10],
       textAlign: TextAlign.center,
+      presetFontSizes: const [14, 10],
+      maxLines: 4,
     );
   }
 
-  Widget _socialMedia() {
+  Widget _socialMedia(BuildContext context) {
+    final iconSize = ResponsiveWidget.isSmallScreen(context) ? 24.0 : 32.0;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         ClickableIcon(
           icon: FontAwesomeIcons.github,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.github,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.instagram,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.instagram,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.linkedinIn,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.linkedin,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.twitter,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.twitter,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.youtube,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.youtube,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.spotify,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.spotify,
         ),
       ],
