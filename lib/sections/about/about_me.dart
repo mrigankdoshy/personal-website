@@ -11,8 +11,15 @@ import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AboutMe extends StatelessWidget {
+class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);
+
+  @override
+  State<AboutMe> createState() => _AboutMeState();
+}
+
+class _AboutMeState extends State<AboutMe> {
+  AutoSizeGroup paragraphGroup = AutoSizeGroup();
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +78,8 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
-      maxLines: 6,
+      maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
@@ -97,22 +105,37 @@ class AboutMe extends StatelessWidget {
         ],
       ),
       maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
   Widget _aboutMeParagraph3() {
-    return const AutoSizeText(
-      AboutMeData.paragraph3,
-      style: TextStyles.paragraph,
+    return AutoSizeText.rich(
+      const TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: AboutMeData.paragraph3,
+            style: TextStyles.paragraph,
+          ),
+        ],
+      ),
       maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
   Widget _aboutMeParagraph4() {
-    return const AutoSizeText(
-      AboutMeData.paragraph4,
-      style: TextStyles.paragraph,
+    return AutoSizeText.rich(
+      const TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: AboutMeData.paragraph4,
+            style: TextStyles.paragraph,
+          ),
+        ],
+      ),
       maxLines: 2,
+      group: paragraphGroup,
     );
   }
 

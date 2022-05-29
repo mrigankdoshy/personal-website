@@ -1,7 +1,7 @@
 class AboutMeData {
   static const paragraph1Part1 =
-      "After about four years of trying out different things, I have come to realize that I'm really good at two things: building products and getting them out into the world. Most recently, I co-founded and developed ";
-  static const paragraph1Part2 = ", and have grown it to over 100 users.";
+      "After about four years of trying out different things, I have come to realize that I'm really good at two things: building products and getting them out into the world. Recently, I co-founded and developed ";
+  static const paragraph1Part2 = ", and have grew it to over 100 users.";
 
   static const paragraph2Part1 = "I'm a recent graduate from ";
   static const paragraph2Part2 =
