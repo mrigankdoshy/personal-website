@@ -41,6 +41,7 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+    bool isMediumScreen = ResponsiveWidget.isMediumScreen(context);
 
     return Padding(
       padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
@@ -85,7 +86,11 @@ class _ProjectsState extends State<Projects> {
               );
             },
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: isSmallScreen ? 1 : 3,
+              crossAxisCount: isSmallScreen
+                  ? 1
+                  : isMediumScreen
+                      ? 2
+                      : 3,
               childAspectRatio: 1.35,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,

@@ -26,7 +26,7 @@ class _MyPictureState extends State<MyPicture> {
 
     return Padding(
       padding: EdgeInsets.only(
-          top: ResponsiveWidget.isLargeScreen(context) ? 32.0 : 80.0),
+          top: ResponsiveWidget.isAtLeastLargeScreen(context) ? 32.0 : 80.0),
       child: MouseRegion(
         onEnter: (_) => onEntered(true),
         onExit: (_) => onEntered(false),

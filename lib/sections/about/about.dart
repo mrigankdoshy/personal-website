@@ -18,8 +18,10 @@ class About extends StatelessWidget {
             children: <Widget>[
               const AboutMe(),
               SizedBox(
-                  width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
-              if (!ResponsiveWidget.isSmallScreen(context))
+                  width: ResponsiveWidget.isAtLeastLargeScreen(context)
+                      ? 80.0
+                      : 0.0),
+              if (ResponsiveWidget.isAtLeastLargeScreen(context))
                 FadeAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 1000),
@@ -27,7 +29,7 @@ class About extends StatelessWidget {
                 ),
             ],
           ),
-          if (ResponsiveWidget.isSmallScreen(context))
+          if (!ResponsiveWidget.isAtLeastLargeScreen(context))
             FadeAnimation(
               animationKey: UniqueKey(),
               delay: const Duration(milliseconds: 1000),

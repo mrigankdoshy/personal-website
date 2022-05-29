@@ -36,17 +36,17 @@ class SectionTitle extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     Color color = AppColors.mediumGrey2.withOpacity(0.5);
 
-    return ResponsiveWidget.isSmallScreen(context)
-        ? Flexible(
+    return ResponsiveWidget.isAtLeastLargeScreen(context)
+        ? Container(
+            height: height,
+            width: width / 4.5,
+            color: color,
+          )
+        : Flexible(
             child: Container(
               height: height,
               color: color,
             ),
-          )
-        : Container(
-            height: height,
-            width: width / 4.5,
-            color: color,
           );
   }
 

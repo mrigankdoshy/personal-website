@@ -185,7 +185,7 @@ class Home extends StatelessWidget {
   Widget _buildLargeScreen(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: width / 4.75),
+      padding: EdgeInsets.symmetric(horizontal: width / 4.85),
       child: _buildContent(),
     );
   }
