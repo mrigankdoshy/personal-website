@@ -14,9 +14,12 @@ class Intro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          vertical: ResponsiveWidget.isSmallScreen(context) ? 128.0 : 16.0),
+    const sliverAppBarHeight = 90;
+    double height = MediaQuery.of(context).size.height - 2 * sliverAppBarHeight;
+
+    return Container(
+      height: height,
+      alignment: Alignment.center,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -34,6 +37,7 @@ class Intro extends StatelessWidget {
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SlideAnimation(
                   animationKey: UniqueKey(),
@@ -44,10 +48,10 @@ class Intro extends StatelessWidget {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 850),
-                  child: _nameAndTitle(),
+                  child: _nameAndTitle(context),
                 ),
                 SizedBox(
-                    height: ResponsiveWidget.isSmallScreen(context) ? 8 : 0),
+                    height: ResponsiveWidget.isSmallScreen(context) ? 16 : 0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 900),
@@ -89,21 +93,25 @@ class Intro extends StatelessWidget {
     );
   }
 
-  Widget _nameAndTitle() {
+  Widget _nameAndTitle(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AutoSizeText(
+        AutoSizeText(
           IntroData.name,
           style: TextStyles.headline1,
           maxLines: 1,
+          maxFontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 72,
         ),
         Container(
-          transform: Matrix4.translationValues(0.0, -12.0, 0.0),
-          child: const AutoSizeText(
+          transform: !ResponsiveWidget.isSmallScreen(context)
+              ? Matrix4.translationValues(0.0, -12.0, 0.0)
+              : null,
+          child: AutoSizeText(
             IntroData.title,
             style: TextStyles.headline2,
             maxLines: 1,
+            maxFontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 72,
           ),
         ),
       ],

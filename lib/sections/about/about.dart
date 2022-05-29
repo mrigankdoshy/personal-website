@@ -10,7 +10,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 64.0),
+      padding: const EdgeInsets.only(top: 128.0, bottom: 64.0),
       child: Column(
         children: <Widget>[
           Row(

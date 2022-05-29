@@ -28,7 +28,7 @@ class _AboutMeState extends State<AboutMe> {
         children: <Widget>[
           SlideAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 1000),
+            delay: const Duration(milliseconds: 50),
             child: const SectionTitle(
               number: SectionTitleData.sectionNumber1,
               title: SectionTitleData.section1Title,
@@ -36,7 +36,7 @@ class _AboutMeState extends State<AboutMe> {
           ),
           FadeAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 1100),
+            delay: const Duration(milliseconds: 150),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
