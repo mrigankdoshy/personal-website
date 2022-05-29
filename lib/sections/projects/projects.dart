@@ -7,6 +7,7 @@ import 'package:personal_website/data/text.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/project.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 
@@ -53,41 +54,41 @@ class _ProjectsState extends State<Projects> {
               title: SectionTitleData.section3Title,
             ),
           ),
-          LiveGrid.options(
-            options: options,
-            primary: true,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: _tempProjects.length,
-            itemBuilder:
-                (BuildContext context, int index, Animation<double> animation) {
-              return FadeTransition(
-                opacity: Tween<double>(
-                  begin: 0,
-                  end: 1,
-                ).animate(
-                    CurvedAnimation(parent: animation, curve: Curves.easeOut)),
-                child: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: const Offset(0, -0.2),
-                    end: Offset.zero,
-                  ).animate(animation),
-                  child: Project(
-                    title: _projects[index]['title'],
-                    description: _projects[index]['description'],
-                    url: _projects[index]['url'],
-                    tags: _projects[index]['tags'],
+          ResponsiveWidget.isSmallScreen(context)
+              ? LiveGrid.options(
+                  options: options,
+                  primary: true,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _tempProjects.length,
+                  itemBuilder: (BuildContext context, int index,
+                      Animation<double> animation) {
+                    return _projectTile(context, index, animation);
+                  },
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1,
+                    childAspectRatio: 1.35,
+                    mainAxisSpacing: 8.0,
+                    crossAxisSpacing: 8.0,
+                  ),
+                )
+              : LiveGrid.options(
+                  options: options,
+                  primary: true,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _tempProjects.length,
+                  itemBuilder: (BuildContext context, int index,
+                      Animation<double> animation) {
+                    return _projectTile(context, index, animation);
+                  },
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    childAspectRatio: 1.35,
+                    mainAxisSpacing: 8.0,
+                    crossAxisSpacing: 8.0,
                   ),
                 ),
-              );
-            },
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 1.35,
-              mainAxisSpacing: 8.0,
-              crossAxisSpacing: 8.0,
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 48.0),
             child: Center(
@@ -122,7 +123,13 @@ class _ProjectsState extends State<Projects> {
     );
   }
 
-  Future<void> getJsonData() async {
+  @override
+  void initState() {
+    super.initState();
+    _getJsonData();
+  }
+
+  Future<void> _getJsonData() async {
     final String jsonData =
         await rootBundle.loadString('assets/project_data.json');
     final data = await jsonDecode(jsonData);
@@ -132,9 +139,25 @@ class _ProjectsState extends State<Projects> {
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
-    getJsonData();
+  Widget _projectTile(
+      BuildContext context, int index, Animation<double> animation) {
+    return FadeTransition(
+      opacity: Tween<double>(
+        begin: 0,
+        end: 1,
+      ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
+      child: SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(0, -0.2),
+          end: Offset.zero,
+        ).animate(animation),
+        child: Project(
+          title: _projects[index]['title'],
+          description: _projects[index]['description'],
+          url: _projects[index]['url'],
+          tags: _projects[index]['tags'],
+        ),
+      ),
+    );
   }
 }
