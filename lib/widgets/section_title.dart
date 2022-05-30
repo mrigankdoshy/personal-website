@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/utils/theme.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 
 class SectionTitle extends StatelessWidget {
   final String number;
@@ -21,13 +22,32 @@ class SectionTitle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _sectionNumber(number),
-          const SizedBox(width: 20),
+          SizedBox(width: ResponsiveWidget.isSmallScreen(context) ? 10 : 20),
           _sectionTitle(title),
-          const SizedBox(width: 20),
+          SizedBox(width: ResponsiveWidget.isSmallScreen(context) ? 10 : 20),
           _line(context),
         ],
       ),
     );
+  }
+
+  Widget _line(BuildContext context) {
+    const height = 1.0;
+    double width = MediaQuery.of(context).size.width;
+    Color color = AppColors.mediumGrey2.withOpacity(0.5);
+
+    return ResponsiveWidget.isAtLeastLargeScreen(context)
+        ? Container(
+            height: height,
+            width: width / 4.5,
+            color: color,
+          )
+        : Flexible(
+            child: Container(
+              height: height,
+              color: color,
+            ),
+          );
   }
 
   Widget _sectionNumber(String number) {
@@ -46,15 +66,6 @@ class SectionTitle extends StatelessWidget {
       title,
       style: TextStyles.sectionTitle,
       maxLines: 1,
-    );
-  }
-
-  Widget _line(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    return Container(
-      height: 1.0,
-      width: width / 5,
-      color: AppColors.mediumGrey2.withOpacity(0.5),
     );
   }
 }

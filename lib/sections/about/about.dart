@@ -10,7 +10,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 64.0),
+      padding: const EdgeInsets.only(top: 128.0, bottom: 64.0),
       child: Column(
         children: <Widget>[
           Row(
@@ -18,14 +18,23 @@ class About extends StatelessWidget {
             children: <Widget>[
               const AboutMe(),
               SizedBox(
-                  width: !ResponsiveWidget.isSmallScreen(context) ? 80.0 : 0.0),
-              FadeAnimation(
-                animationKey: UniqueKey(),
-                delay: const Duration(milliseconds: 1000),
-                child: const MyPicture(),
-              ),
+                  width: ResponsiveWidget.isAtLeastLargeScreen(context)
+                      ? 80.0
+                      : 0.0),
+              if (ResponsiveWidget.isAtLeastLargeScreen(context))
+                FadeAnimation(
+                  animationKey: UniqueKey(),
+                  delay: const Duration(milliseconds: 1000),
+                  child: const MyPicture(),
+                ),
             ],
           ),
+          if (!ResponsiveWidget.isAtLeastLargeScreen(context))
+            FadeAnimation(
+              animationKey: UniqueKey(),
+              delay: const Duration(milliseconds: 1000),
+              child: const MyPicture(),
+            ),
         ],
       ),
     );

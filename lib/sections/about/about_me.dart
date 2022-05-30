@@ -11,8 +11,15 @@ import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AboutMe extends StatelessWidget {
+class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);
+
+  @override
+  State<AboutMe> createState() => _AboutMeState();
+}
+
+class _AboutMeState extends State<AboutMe> {
+  AutoSizeGroup paragraphGroup = AutoSizeGroup();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class AboutMe extends StatelessWidget {
         children: <Widget>[
           SlideAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 1000),
+            delay: const Duration(milliseconds: 50),
             child: const SectionTitle(
               number: SectionTitleData.sectionNumber1,
               title: SectionTitleData.section1Title,
@@ -29,7 +36,7 @@ class AboutMe extends StatelessWidget {
           ),
           FadeAnimation(
             animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 1100),
+            delay: const Duration(milliseconds: 150),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -71,7 +78,8 @@ class AboutMe extends StatelessWidget {
           ),
         ],
       ),
-      maxLines: 6,
+      maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
@@ -97,22 +105,37 @@ class AboutMe extends StatelessWidget {
         ],
       ),
       maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
   Widget _aboutMeParagraph3() {
-    return const AutoSizeText(
-      AboutMeData.paragraph3,
-      style: TextStyles.paragraph,
+    return AutoSizeText.rich(
+      const TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: AboutMeData.paragraph3,
+            style: TextStyles.paragraph,
+          ),
+        ],
+      ),
       maxLines: 5,
+      group: paragraphGroup,
     );
   }
 
   Widget _aboutMeParagraph4() {
-    return const AutoSizeText(
-      AboutMeData.paragraph4,
-      style: TextStyles.paragraph,
+    return AutoSizeText.rich(
+      const TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: AboutMeData.paragraph4,
+            style: TextStyles.paragraph,
+          ),
+        ],
+      ),
       maxLines: 2,
+      group: paragraphGroup,
     );
   }
 
@@ -124,9 +147,9 @@ class AboutMe extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            RecentTech(title: "React"),
-            RecentTech(title: "TypeScript"),
-            RecentTech(title: "CSS"),
+            RecentTech(title: TechData.react),
+            RecentTech(title: TechData.typescript),
+            RecentTech(title: TechData.css),
           ],
         ),
         SizedBox(
@@ -134,9 +157,9 @@ class AboutMe extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            RecentTech(title: "Flutter"),
-            RecentTech(title: "Firebase"),
-            RecentTech(title: "C#"),
+            RecentTech(title: TechData.flutter),
+            RecentTech(title: TechData.firebase),
+            RecentTech(title: TechData.csharp),
           ],
         ),
       ],

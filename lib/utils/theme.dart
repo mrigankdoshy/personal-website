@@ -13,6 +13,44 @@ class AppColors {
   static const backgroundBlue = Color(0xFF051021);
 }
 
+class ButtonStyles {
+  static ButtonStyle primary = ButtonStyle(
+    fixedSize: MaterialStateProperty.all(const Size(120, 50)),
+    overlayColor:
+        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    ),
+    side: MaterialStateProperty.all(
+      const BorderSide(
+        color: AppColors.blueAccent,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+    ),
+  );
+
+  static ButtonStyle resume = ButtonStyle(
+    fixedSize: MaterialStateProperty.all(const Size(84, 42)),
+    overlayColor:
+        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    ),
+    side: MaterialStateProperty.all(
+      const BorderSide(
+        color: AppColors.blueAccent,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+    ),
+  );
+}
+
 class TextStyles {
   // Name
   static const headline1 = TextStyle(
@@ -181,43 +219,5 @@ class TextStyles {
     fontFamily: 'SFMono',
     color: AppColors.lightGrey2,
     fontSize: 15,
-  );
-}
-
-class ButtonStyles {
-  static ButtonStyle primary = ButtonStyle(
-    fixedSize: MaterialStateProperty.all(const Size(120, 50)),
-    overlayColor:
-        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
-    shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-    ),
-    side: MaterialStateProperty.all(
-      const BorderSide(
-        color: AppColors.blueAccent,
-        width: 2.0,
-        style: BorderStyle.solid,
-      ),
-    ),
-  );
-
-  static ButtonStyle resume = ButtonStyle(
-    fixedSize: MaterialStateProperty.all(const Size(84, 42)),
-    overlayColor:
-        MaterialStateProperty.all(AppColors.blueAccent.withOpacity(0.1)),
-    shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-    ),
-    side: MaterialStateProperty.all(
-      const BorderSide(
-        color: AppColors.blueAccent,
-        width: 2.0,
-        style: BorderStyle.solid,
-      ),
-    ),
   );
 }

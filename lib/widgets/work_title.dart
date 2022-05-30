@@ -8,12 +8,14 @@ class WorkTitle extends StatelessWidget {
   final String title;
   final String company;
   final String url;
+  final AutoSizeGroup group;
 
   const WorkTitle({
     Key? key,
     required this.title,
     required this.company,
     required this.url,
+    required this.group,
   }) : super(key: key);
 
   @override
@@ -34,7 +36,8 @@ class WorkTitle extends StatelessWidget {
           ),
         ],
       ),
-      maxLines: 1,
+      maxLines: 2,
+      group: group,
     );
   }
 }

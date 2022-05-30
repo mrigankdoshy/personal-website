@@ -7,6 +7,7 @@ import 'package:personal_website/data/text.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/project.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 
@@ -39,6 +40,9 @@ class _ProjectsState extends State<Projects> {
 
   @override
   Widget build(BuildContext context) {
+    bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+    bool isMediumScreen = ResponsiveWidget.isMediumScreen(context);
+
     return Padding(
       padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
       child: Column(
@@ -81,8 +85,12 @@ class _ProjectsState extends State<Projects> {
                 ),
               );
             },
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: isSmallScreen
+                  ? 1
+                  : isMediumScreen
+                      ? 2
+                      : 3,
               childAspectRatio: 1.35,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
@@ -122,7 +130,13 @@ class _ProjectsState extends State<Projects> {
     );
   }
 
-  Future<void> getJsonData() async {
+  @override
+  void initState() {
+    super.initState();
+    _getJsonData();
+  }
+
+  Future<void> _getJsonData() async {
     final String jsonData =
         await rootBundle.loadString('assets/project_data.json');
     final data = await jsonDecode(jsonData);
@@ -130,11 +144,5 @@ class _ProjectsState extends State<Projects> {
       _projects = data["projects"];
       _tempProjects.addAll(_projects.getRange(0, condensedView));
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getJsonData();
   }
 }

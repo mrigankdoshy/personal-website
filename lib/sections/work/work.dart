@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/sections/work/kcf_technologies.dart';
@@ -13,6 +14,9 @@ class Work extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AutoSizeGroup pointGroup = AutoSizeGroup();
+    AutoSizeGroup titleGroup = AutoSizeGroup();
+
     return Padding(
       padding: EdgeInsets.only(
         top: 16.0,
@@ -34,19 +38,20 @@ class Work extends StatelessWidget {
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: const KcfTechnologies(),
+            child:
+                KcfTechnologies(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: const Volvo(),
+            child: Volvo(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
           const SizedBox(height: 32.0),
           FadeAnimation(
             animationKey: UniqueKey(),
             delay: const Duration(milliseconds: 100),
-            child: const Mule(),
+            child: Mule(pointGroup: pointGroup, titleGroup: titleGroup),
           ),
         ],
       ),

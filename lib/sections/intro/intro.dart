@@ -14,12 +14,16 @@ class Intro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+    const sliverAppBarHeight = 90;
+    double height = MediaQuery.of(context).size.height - 2 * sliverAppBarHeight;
+
+    return Container(
+      height: height,
+      alignment: Alignment.center,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context))
+          if (ResponsiveWidget.isAtLeastLargeScreen(context))
             FadeAnimation(
               animationKey: UniqueKey(),
               delay: const Duration(milliseconds: 750),
@@ -28,10 +32,12 @@ class Intro extends StatelessWidget {
                 scale: ResponsiveWidget.isMediumScreen(context) ? 4.0 : 2.5,
               ),
             ),
-          SizedBox(width: !ResponsiveWidget.isSmallScreen(context) ? 30 : 0),
+          SizedBox(
+              width: ResponsiveWidget.isAtLeastLargeScreen(context) ? 30 : 0),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SlideAnimation(
                   animationKey: UniqueKey(),
@@ -42,8 +48,10 @@ class Intro extends StatelessWidget {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 850),
-                  child: _nameAndTitle(),
+                  child: _nameAndTitle(context),
                 ),
+                SizedBox(
+                    height: ResponsiveWidget.isSmallScreen(context) ? 16 : 0),
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 900),
@@ -62,9 +70,7 @@ class Intro extends StatelessWidget {
       TextSpan(
         style: TextStyles.paragraph,
         children: <TextSpan>[
-          const TextSpan(
-            text: IntroData.about,
-          ),
+          const TextSpan(text: IntroData.about),
           TextSpan(
             text: WorkData.kcf,
             style: TextStyles.highlightParagraph,
@@ -87,21 +93,25 @@ class Intro extends StatelessWidget {
     );
   }
 
-  Widget _nameAndTitle() {
+  Widget _nameAndTitle(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AutoSizeText(
+        AutoSizeText(
           IntroData.name,
           style: TextStyles.headline1,
           maxLines: 1,
+          maxFontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 72,
         ),
         Container(
-          transform: Matrix4.translationValues(0.0, -12.0, 0.0),
-          child: const AutoSizeText(
+          transform: !ResponsiveWidget.isSmallScreen(context)
+              ? Matrix4.translationValues(0.0, -12.0, 0.0)
+              : null,
+          child: AutoSizeText(
             IntroData.title,
             style: TextStyles.headline2,
             maxLines: 1,
+            maxFontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 72,
           ),
         ),
       ],

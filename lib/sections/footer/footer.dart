@@ -7,11 +7,18 @@ import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/clickable_icon.dart';
 import 'package:personal_website/widgets/fade_animation.dart';
+import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
+
+  @override
+  State<Footer> createState() => _FooterState();
+}
+
+class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,11 +28,12 @@ class Footer extends StatelessWidget {
         children: [
           Flexible(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 50),
-                  child: _footerText(),
+                  child: _footerText(context),
                 ),
                 const SizedBox(height: 32.0),
                 SlideAnimation(
@@ -37,7 +45,7 @@ class Footer extends StatelessWidget {
                 SlideAnimation(
                   animationKey: UniqueKey(),
                   delay: const Duration(milliseconds: 250),
-                  child: _socialMedia(),
+                  child: _socialMedia(context),
                 ),
                 const SizedBox(height: 40.0),
                 FadeAnimation(
@@ -80,6 +88,7 @@ class Footer extends StatelessWidget {
           ),
         ],
       ),
+      textAlign: TextAlign.center,
       maxLines: 2,
     );
   }
@@ -93,68 +102,69 @@ class Footer extends StatelessWidget {
     );
   }
 
-  Widget _footerText() {
-    return Column(
-      children: const <Widget>[
-        AutoSizeText(
-          FooterData.footerTextPart1,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 1,
-        ),
-        AutoSizeText(
-          FooterData.footerTextPart2,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 1,
-        ),
-        AutoSizeText(
-          FooterData.footerTextPart3,
-          style: TextStyles.footer,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-        ),
-      ],
+  Widget _footerText(BuildContext context) {
+    return AutoSizeText.rich(
+      TextSpan(
+        style: TextStyles.footer,
+        children: [
+          const TextSpan(text: FooterData.footerTextPart1),
+          const TextSpan(text: FooterData.footerTextPart2),
+          ResponsiveWidget.isSmallScreen(context)
+              ? const TextSpan(
+                  style: TextStyles.footer,
+                  children: [
+                    TextSpan(text: FooterData.footerTextPart3Alt1),
+                    TextSpan(text: FooterData.footerTextPart3Alt2),
+                  ],
+                )
+              : const TextSpan(text: FooterData.footerTextPart3),
+        ],
+      ),
+      textAlign: TextAlign.center,
+      presetFontSizes: const [14, 10],
+      maxLines: 4,
     );
   }
 
-  Widget _socialMedia() {
+  Widget _socialMedia(BuildContext context) {
+    final iconSize = ResponsiveWidget.isSmallScreen(context) ? 24.0 : 32.0;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         ClickableIcon(
           icon: FontAwesomeIcons.github,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.github,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.instagram,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.instagram,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.linkedinIn,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.linkedin,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.twitter,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.twitter,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.youtube,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.youtube,
         ),
-        SizedBox(width: 24.0),
+        const SizedBox(width: 24.0),
         ClickableIcon(
           icon: FontAwesomeIcons.spotify,
-          iconSize: 32.0,
+          iconSize: iconSize,
           url: Url.spotify,
         ),
       ],

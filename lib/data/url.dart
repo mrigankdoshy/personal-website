@@ -45,4 +45,8 @@ class Url {
       "https://www.youtube.com/channel/UCFdJXx82HEolB4Nv2cW8C_g";
   static const spotify =
       "https://open.spotify.com/user/0dmta114n09jih8ye0ql93v08";
+
+  // Resume
+  static const resume =
+      "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/mrigankdoshy/personal-website/main/assets/Mrigank%20Doshy%20-%20Resume%20(Website).pdf";
 }

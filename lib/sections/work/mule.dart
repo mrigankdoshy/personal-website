@@ -10,7 +10,14 @@ import 'package:personal_website/widgets/work_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Mule extends StatelessWidget {
-  const Mule({Key? key}) : super(key: key);
+  final AutoSizeGroup pointGroup;
+  final AutoSizeGroup titleGroup;
+
+  const Mule({
+    Key? key,
+    required this.pointGroup,
+    required this.titleGroup,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +25,11 @@ class Mule extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const WorkTitle(
+        WorkTitle(
           title: "${WorkData.cofounder} and ${WorkData.softwareEngineer}",
           company: WorkData.mule,
           url: Url.mule,
+          group: titleGroup,
         ),
         const DateRange(start: MuleData.startDate, end: MuleData.endDate),
         const SizedBox(height: 8.0),
@@ -70,6 +78,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
@@ -110,6 +119,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
@@ -141,6 +151,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 5,
+        group: pointGroup,
       ),
     );
   }
@@ -164,6 +175,7 @@ class Mule extends StatelessWidget {
           ],
         ),
         maxLines: 4,
+        group: pointGroup,
       ),
     );
   }
