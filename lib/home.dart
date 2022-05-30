@@ -1,6 +1,7 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/data/text.dart';
+import 'package:personal_website/data/url.dart';
 import 'package:personal_website/sections/about/about.dart';
 import 'package:personal_website/sections/footer/footer.dart';
 import 'package:personal_website/sections/intro/intro.dart';
@@ -10,6 +11,7 @@ import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/menu_button.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   static final List<GlobalKey> dataKeys =
@@ -113,7 +115,7 @@ class Home extends StatelessWidget {
                   ButtonData.resume,
                   style: TextStyles.navBarButtonNumber,
                 ),
-                onPressed: () {},
+                onPressed: () => launch(Url.resume),
               ),
             ),
           ],
@@ -173,7 +175,7 @@ class Home extends StatelessWidget {
                       ButtonData.resume,
                       style: TextStyles.navBarButtonNumber,
                     ),
-                    onPressed: () {},
+                    onPressed: () => launch(Url.resume),
                   ),
                 ],
               ),
