@@ -1,3 +1,7 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/home.dart';
 import 'package:personal_website/utils/theme.dart';
@@ -17,7 +21,10 @@ class PersonalWebsite extends StatelessWidget {
       theme: ThemeData(
         canvasColor: AppColors.backgroundBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'Calibre',
+        // TODO: https://github.com/flutter/flutter/issues/93140
+        fontFamily: kIsWeb && window.navigator.userAgent.contains('OS 15_')
+            ? '-apple-system'
+            : null,
       ),
       home: const Home(),
     );
