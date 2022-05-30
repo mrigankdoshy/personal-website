@@ -24,7 +24,7 @@ class PersonalWebsite extends StatelessWidget {
         // TODO: https://github.com/flutter/flutter/issues/93140
         fontFamily: kIsWeb && window.navigator.userAgent.contains('OS 15_')
             ? '-apple-system'
-            : null,
+            : 'Calibre',
       ),
       home: const Home(),
     );
