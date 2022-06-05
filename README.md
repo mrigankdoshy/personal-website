@@ -2,7 +2,7 @@
   <img alt="Logo" src="https://user-images.githubusercontent.com/32623983/170842452-2ea3a2f8-2164-421e-8788-d52c878a1a07.png" width="100" />
 </div>
 <h1 align="center">
-  mrigankdoshy.com
+  <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>
 </h1>
 <p align="center">
   A personal portfolio website built using <a href="https://flutter.dev" target="_blank">Flutter</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
