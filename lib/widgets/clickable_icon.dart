@@ -8,13 +8,12 @@ class ClickableIcon extends StatefulWidget {
   final double iconSize;
   final Color iconColor;
   final String url;
-  const ClickableIcon({
-    super.key,
-    required this.icon,
-    required this.iconSize,
-    required this.url,
-    this.iconColor = AppColors.lightGrey1
-  });
+  const ClickableIcon(
+      {super.key,
+      required this.icon,
+      required this.iconSize,
+      required this.url,
+      this.iconColor = AppColors.lightGrey1});
 
   @override
   State<ClickableIcon> createState() => _ClickableIconState();
