@@ -11,12 +11,12 @@ class WorkTitle extends StatelessWidget {
   final AutoSizeGroup group;
 
   const WorkTitle({
-    Key? key,
+    super.key,
     required this.title,
     required this.company,
     required this.url,
     required this.group,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

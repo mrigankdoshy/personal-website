@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
@@ -12,7 +13,7 @@ import 'package:personal_website/widgets/slide_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
 
   @override
   State<Footer> createState() => _FooterState();
@@ -31,25 +32,25 @@ class _FooterState extends State<Footer> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.footerText,
                   delay: const Duration(milliseconds: 50),
                   child: _footerText(context),
                 ),
                 const SizedBox(height: 32.0),
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.footerContact,
                   delay: const Duration(milliseconds: 150),
                   child: _contact(),
                 ),
                 const SizedBox(height: 40.0),
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.socialMedia,
                   delay: const Duration(milliseconds: 250),
                   child: _socialMedia(context),
                 ),
                 const SizedBox(height: 40.0),
                 FadeAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.copyright,
                   delay: const Duration(milliseconds: 350),
                   child: _copyright(),
                 ),

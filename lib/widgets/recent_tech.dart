@@ -8,9 +8,9 @@ import 'package:personal_website/widgets/responsive_widget.dart';
 class RecentTech extends StatelessWidget {
   final String title;
   const RecentTech({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

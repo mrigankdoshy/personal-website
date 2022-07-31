@@ -14,10 +14,10 @@ class Mule extends StatelessWidget {
   final AutoSizeGroup titleGroup;
 
   const Mule({
-    Key? key,
+    super.key,
     required this.pointGroup,
     required this.titleGroup,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

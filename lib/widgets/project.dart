@@ -12,12 +12,12 @@ class Project extends StatefulWidget {
   final List tags;
 
   const Project({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.url,
     required this.tags,
-  }) : super(key: key);
+  });
 
   @override
   State<Project> createState() => _ProjectState();

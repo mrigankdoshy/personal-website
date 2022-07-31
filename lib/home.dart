@@ -1,5 +1,6 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/sections/about/about.dart';
@@ -17,7 +18,7 @@ class Home extends StatelessWidget {
   static final List<GlobalKey> dataKeys =
       List.generate(4, (index) => GlobalKey());
 
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             SlideAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.aboutMenuButton,
               slideDown: true,
               child: MenuButtton(
                 dataKey: dataKeys[0],
@@ -73,7 +74,7 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.experienceMenuButton,
               slideDown: true,
               delay: const Duration(milliseconds: 50),
               child: MenuButtton(
@@ -84,7 +85,7 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.projectsMenuButton,
               slideDown: true,
               delay: const Duration(milliseconds: 100),
               child: MenuButtton(
@@ -95,7 +96,7 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 8.0),
             SlideAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.contactMenuButton,
               slideDown: true,
               delay: const Duration(milliseconds: 150),
               child: MenuButtton(
@@ -106,7 +107,7 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(width: 12.0),
             SlideAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.resumeMenuButton,
               slideDown: true,
               delay: const Duration(milliseconds: 200),
               child: OutlinedButton(

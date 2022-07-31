@@ -7,10 +7,10 @@ class DateRange extends StatelessWidget {
   final String end;
 
   const DateRange({
-    Key? key,
+    super.key,
     required this.start,
     required this.end,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
