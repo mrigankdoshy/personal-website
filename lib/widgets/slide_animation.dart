@@ -9,13 +9,13 @@ class SlideAnimation extends StatelessWidget {
   final Widget child;
 
   const SlideAnimation({
-    Key? key,
+    super.key,
     required this.animationKey,
     required this.child,
     this.slideDown = false,
     this.delay = const Duration(milliseconds: 0),
     this.duration = const Duration(milliseconds: 300),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

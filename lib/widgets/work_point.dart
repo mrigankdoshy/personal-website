@@ -4,9 +4,9 @@ import 'package:personal_website/widgets/bullet.dart';
 class WorkPoint extends StatelessWidget {
   final Widget data;
   const WorkPoint({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

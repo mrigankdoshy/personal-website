@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/widgets/triangular_bullet.dart';
 
 class Bullet extends StatelessWidget {
-  const Bullet({Key? key}) : super(key: key);
+  const Bullet({super.key});
 
   @override
   Widget build(BuildContext context) {

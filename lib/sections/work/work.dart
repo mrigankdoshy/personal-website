@@ -11,7 +11,7 @@ import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 
 class Work extends StatelessWidget {
-  const Work({Key? key}) : super(key: key);
+  const Work({super.key});
 
   @override
   Widget build(BuildContext context) {

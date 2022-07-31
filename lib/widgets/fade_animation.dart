@@ -8,12 +8,12 @@ class FadeAnimation extends StatelessWidget {
   final Widget child;
 
   const FadeAnimation({
-    Key? key,
+    super.key,
     required this.animationKey,
     required this.child,
     this.delay = const Duration(milliseconds: 0),
     this.duration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

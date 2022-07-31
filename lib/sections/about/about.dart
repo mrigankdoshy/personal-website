@@ -6,7 +6,7 @@ import 'package:personal_website/widgets/fade_animation.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+  const About({super.key});
 
   @override
   Widget build(BuildContext context) {

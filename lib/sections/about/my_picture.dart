@@ -3,7 +3,7 @@ import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/responsive_widget.dart';
 
 class MyPicture extends StatefulWidget {
-  const MyPicture({Key? key}) : super(key: key);
+  const MyPicture({super.key});
 
   @override
   State<MyPicture> createState() => _MyPictureState();

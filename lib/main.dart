@@ -7,7 +7,7 @@ void main() {
 }
 
 class PersonalWebsite extends StatelessWidget {
-  const PersonalWebsite({Key? key}) : super(key: key);
+  const PersonalWebsite({super.key});
 
   @override
   Widget build(BuildContext context) {

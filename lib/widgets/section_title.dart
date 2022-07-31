@@ -8,10 +8,10 @@ class SectionTitle extends StatelessWidget {
   final String title;
 
   const SectionTitle({
-    Key? key,
+    super.key,
     required this.number,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ import 'package:personal_website/widgets/section_title.dart';
 import 'package:personal_website/widgets/slide_animation.dart';
 
 class Projects extends StatefulWidget {
-  const Projects({Key? key}) : super(key: key);
+  const Projects({super.key});
 
   @override
   State<Projects> createState() => _ProjectsState();

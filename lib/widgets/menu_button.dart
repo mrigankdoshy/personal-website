@@ -7,11 +7,11 @@ class MenuButtton extends StatelessWidget {
   final GlobalKey<State<StatefulWidget>> dataKey;
 
   const MenuButtton({
-    Key? key,
+    super.key,
     required this.dataKey,
     required this.buttonNumber,
     required this.buttonTitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

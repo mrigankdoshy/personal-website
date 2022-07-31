@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
   static final List<GlobalKey> dataKeys =
       List.generate(4, (index) => GlobalKey());
 
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
