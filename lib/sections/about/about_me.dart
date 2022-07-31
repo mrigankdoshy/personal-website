@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
@@ -26,16 +27,16 @@ class _AboutMeState extends State<AboutMe> {
     return Flexible(
       child: Column(
         children: <Widget>[
-          SlideAnimation(
-            animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 50),
-            child: const SectionTitle(
+          const SlideAnimation(
+            animationKey: Keys.aboutSection,
+            delay: Duration(milliseconds: 50),
+            child: SectionTitle(
               number: SectionTitleData.sectionNumber1,
               title: SectionTitleData.section1Title,
             ),
           ),
           FadeAnimation(
-            animationKey: UniqueKey(),
+            animationKey: Keys.aboutMe,
             delay: const Duration(milliseconds: 150),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

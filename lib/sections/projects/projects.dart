@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/utils/theme.dart';
 import 'package:personal_website/widgets/fade_animation.dart';
@@ -49,10 +50,10 @@ class _ProjectsState extends State<Projects> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SlideAnimation(
-            animationKey: UniqueKey(),
-            delay: const Duration(milliseconds: 50),
-            child: const SectionTitle(
+          const SlideAnimation(
+            animationKey: Keys.projectsSection,
+            delay: Duration(milliseconds: 50),
+            child: SectionTitle(
               number: SectionTitleData.sectionNumber3,
               title: SectionTitleData.section3Title,
             ),
@@ -100,7 +101,7 @@ class _ProjectsState extends State<Projects> {
             padding: const EdgeInsets.symmetric(vertical: 48.0),
             child: Center(
               child: FadeAnimation(
-                animationKey: UniqueKey(),
+                animationKey: Keys.projectsButton,
                 delay: const Duration(milliseconds: 50),
                 child: OutlinedButton(
                   style: ButtonStyles.primary,

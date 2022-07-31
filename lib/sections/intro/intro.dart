@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/data/text.dart';
 import 'package:personal_website/data/url.dart';
 import 'package:personal_website/utils/theme.dart';
@@ -25,7 +26,7 @@ class Intro extends StatelessWidget {
         children: <Widget>[
           if (ResponsiveWidget.isAtLeastLargeScreen(context))
             FadeAnimation(
-              animationKey: UniqueKey(),
+              animationKey: Keys.backgroundPicture,
               delay: const Duration(milliseconds: 750),
               child: Image.asset(
                 'assets/intro_background.png',
@@ -40,20 +41,20 @@ class Intro extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.greeting,
                   delay: const Duration(milliseconds: 750),
                   child: _greeting(),
                 ),
                 const SizedBox(height: 25.0),
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.nameTitle,
                   delay: const Duration(milliseconds: 850),
                   child: _nameAndTitle(context),
                 ),
                 SizedBox(
                     height: ResponsiveWidget.isSmallScreen(context) ? 16 : 0),
                 SlideAnimation(
-                  animationKey: UniqueKey(),
+                  animationKey: Keys.introText,
                   delay: const Duration(milliseconds: 900),
                   child: _about(),
                 ),

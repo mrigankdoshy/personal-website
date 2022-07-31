@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/data/keys.dart';
 import 'package:personal_website/sections/about/about_me.dart';
 import 'package:personal_website/sections/about/my_picture.dart';
 import 'package:personal_website/widgets/fade_animation.dart';
@@ -22,18 +23,18 @@ class About extends StatelessWidget {
                       ? 80.0
                       : 0.0),
               if (ResponsiveWidget.isAtLeastLargeScreen(context))
-                FadeAnimation(
-                  animationKey: UniqueKey(),
-                  delay: const Duration(milliseconds: 1000),
-                  child: const MyPicture(),
+                const FadeAnimation(
+                  animationKey: Keys.myPicture,
+                  delay: Duration(milliseconds: 1000),
+                  child: MyPicture(),
                 ),
             ],
           ),
           if (!ResponsiveWidget.isAtLeastLargeScreen(context))
-            FadeAnimation(
-              animationKey: UniqueKey(),
-              delay: const Duration(milliseconds: 1000),
-              child: const MyPicture(),
+            const FadeAnimation(
+              animationKey: Keys.myPicture,
+              delay: Duration(milliseconds: 1000),
+              child: MyPicture(),
             ),
         ],
       ),
