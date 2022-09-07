@@ -185,7 +185,7 @@ class _FooterState extends State<Footer> {
       children: <Widget>[
         const ClickableIcon(
           icon: FontAwesomeIcons.codeBranch,
-          iconSize: 14.0,
+          iconSize: 12.0,
           iconColor: AppColors.mediumGrey2,
           url: Url.websiteSourceCode,
         ),
