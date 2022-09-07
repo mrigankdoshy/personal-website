@@ -217,7 +217,14 @@ class TextStyles {
   // Copyright
   static const copyright = TextStyle(
     fontFamily: 'SFMono',
-    color: AppColors.lightGrey2,
-    fontSize: 15,
+    color: AppColors.mediumGrey1,
+    fontSize: 14,
+  );
+
+  // Source Code
+  static const sourceCode = TextStyle(
+    fontFamily: 'SFMono',
+    color: AppColors.mediumGrey2,
+    fontSize: 13,
   );
 }

@@ -28,4 +28,5 @@ class Keys {
   static const footerContact = Key("footer_contact");
   static const socialMedia = Key("social_media");
   static const copyright = Key("copyright");
+  static const sourceCode = Key("source_code");
 }
