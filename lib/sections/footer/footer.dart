@@ -54,6 +54,12 @@ class _FooterState extends State<Footer> {
                   delay: const Duration(milliseconds: 350),
                   child: _copyright(),
                 ),
+                const SizedBox(height: 12.0),
+                FadeAnimation(
+                  animationKey: Keys.sourceCode,
+                  delay: const Duration(milliseconds: 450),
+                  child: _sourceCode(),
+                ),
               ],
             ),
           ),
@@ -167,6 +173,39 @@ class _FooterState extends State<Footer> {
           icon: FontAwesomeIcons.spotify,
           iconSize: iconSize,
           url: Url.spotify,
+        ),
+      ],
+    );
+  }
+
+  Widget _sourceCode() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        const ClickableIcon(
+          icon: FontAwesomeIcons.codeBranch,
+          iconSize: 14.0,
+          iconColor: AppColors.mediumGrey2,
+          url: Url.websiteSourceCode,
+        ),
+        const SizedBox(width: 8.0),
+        Flexible(
+          child: AutoSizeText.rich(
+            TextSpan(
+              style: TextStyles.sourceCode,
+              children: <TextSpan>[
+                TextSpan(
+                  text: FooterData.version,
+                  style: TextStyles.sourceCode,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => launch(Url.websiteSourceCode),
+                ),
+              ],
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+          ),
         ),
       ],
     );
