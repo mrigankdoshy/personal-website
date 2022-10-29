@@ -22,7 +22,7 @@ class Work extends StatelessWidget {
       padding: EdgeInsets.only(
         top: 16.0,
         bottom: 64.0,
-        right: !ResponsiveWidget.isSmallScreen(context) ? 136.0 : 0.0,
+        right: ResponsiveWidget.isAtLeastLargeScreen(context) ? 136.0 : 0.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
