@@ -19,8 +19,6 @@
 <!-- ![Portfolio](https://user-images.githubusercontent.com/32623983/170842714-41b4be8d-fddb-4e23-88a9-74330e4199e6.png) -->
 <img width="1680" alt="Website" src="https://user-images.githubusercontent.com/32623983/170842874-a4b772c5-b21f-4816-a37d-f5f3e9995c9f.png">
 
-## 🚧 Work In Progress
-This project is currently a work in progress - mainly around being responsive to various device sizes.
 
 ## 🚀 Building and Running
 
