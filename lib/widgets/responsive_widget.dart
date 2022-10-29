@@ -16,7 +16,7 @@ class ResponsiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 768) {
+        if (constraints.maxWidth > 1200) {
           return largeScreen;
         } else if (constraints.maxWidth < 1200 && constraints.maxWidth > 425) {
           return mediumScreen ?? largeScreen;
@@ -36,7 +36,7 @@ class ResponsiveWidget extends StatelessWidget {
   }
 
   static bool isMediumScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width > 768 &&
+    return MediaQuery.of(context).size.width >= 768 &&
         MediaQuery.of(context).size.width < 1200;
   }
 
