@@ -5,12 +5,9 @@
   <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>
 </h1>
 <p align="center">
-  A personal portfolio website built using <a href="https://flutter.dev" target="_blank">Flutter</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+  A personal portfolio website built using <a href="https://flutter.dev" target="_blank">Flutter</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
 </p>
 <p align="center">
-  <a href="https://app.netlify.com/sites/mrigankdoshy/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/a198fb14-209d-47db-b69d-e7c8852f2b1e/deploy-status" alt="Netlify Status" />
-  </a>
    <a href="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml" target="_blank">
     <img src="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml/badge.svg" alt="CI" />
   </a>
