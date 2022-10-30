@@ -8,7 +8,7 @@
   A personal portfolio website built using <a href="https://flutter.dev" target="_blank">Flutter</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
 </p>
 <p align="center">
-   <img src="https://therealsujitk-vercel-badge.vercel.app/?app=mrigankdoshy" />
+   <img src="https://vercelbadge.vercel.app/api/mrigankdoshy/personal-website" />
    <a href="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml" target="_blank">
     <img src="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml/badge.svg" alt="CI" />
   </a>
