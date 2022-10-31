@@ -13,6 +13,7 @@ class PersonalWebsite extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Mrigank Doshy | Software Engineer",
       theme: ThemeData(
         canvasColor: AppColors.backgroundBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

@@ -8,10 +8,14 @@
   A personal portfolio website built using <a href="https://flutter.dev" target="_blank">Flutter</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
 </p>
 <p align="center">
-   <img src="https://therealsujitk-vercel-badge.vercel.app/?app=mrigankdoshy" />
+   <img src="https://therealsujitk-vercel-badge.vercel.app/?app=mrigankdoshy&style=for-the-badge" />
    <a href="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml" target="_blank">
-    <img src="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml/badge.svg" alt="CI" />
+    <img src="https://img.shields.io/github/workflow/status/mrigankdoshy/personal-website/CI?label=CI&logo=github&style=for-the-badge" alt="CI" />
   </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
+  </a>
+        <img src="https://img.shields.io/github/v/release/mrigankdoshy/personal-website?color=blue&include_prereleases&sort=date&style=for-the-badge" alt="Release">
 </p>
 
 <!-- ![Portfolio](https://user-images.githubusercontent.com/32623983/170842714-41b4be8d-fddb-4e23-88a9-74330e4199e6.png) -->
@@ -41,9 +45,10 @@ flutter run build web --release
 ```
 
 ## ⚠️ Disclaimer
-The website design has been an inspiration from <a href="https://brittanychiang.com" target="_blank">Brittany Chiang</a> (she's awesome!) and has been rebuilt using <a href="https://flutter.dev" target="_blank">Flutter</a>. 
-
 Feel free to fork this repository and use parts of the code for your own website. However, I encourage you to use this as a learning tool and ask that you modify the theme and widgets to make it your own, and have fun with Flutter! 
+
+
+The website design has been an inspiration from <a href="https://brittanychiang.com" target="_blank">Brittany Chiang</a>.
 
 I've spent a non-trivial amount of effort building and redesigning this iteration of my website. If you decide to make use of this project, I'd appreciate being credited as the developer (by linking back to <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>). I also ask that you credit <a href="https://brittanychiang.com" target="_blank">Brittany Chiang</a> for the design inspiration.
 
