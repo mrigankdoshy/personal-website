@@ -7,6 +7,7 @@ class Url {
 
   // Technologies
   static const react = "https://reactjs.org/";
+  static const reactNative = "https://reactnative.dev/";
   static const css = "https://www.w3.org/Style/CSS/Overview.en.html";
   static const sass = "https://sass-lang.com/";
   static const csharp = "https://docs.microsoft.com/en-us/dotnet/csharp/";

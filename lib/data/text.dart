@@ -43,16 +43,16 @@ class FooterData {
   static const contactPart4 = "Instagram DMs";
   static const contactPart5 = ".";
 
-  static const copyright = "© 2022 by Mrigank Doshy";
-  static const version = "v1.0.1";
+  static const copyright = "© 2023 by Mrigank Doshy";
+  static const version = "v1.1.0";
 }
 
 class IntroData {
   static const greeting = "Hey there, I'm";
-  static const name = "Mrigank Doshy";
-  static const title = "Developer and Designer";
+  static const name = "Mrigank Doshy.";
+  static const title = "I build mobile and web apps.";
   static const about =
-      "I'm an entrepreneur and software engineer, with a passion for developing innovative solutions. Currently, I'm focused on building sustainable and comprehensive machine health centered products at ";
+      "I'm a software engineer, with a passion for developing (and occasionally designing) digital experiences. Currently, I'm focused on building sustainable and comprehensive machine health centered products at ";
 }
 
 class KcfData {
@@ -60,23 +60,21 @@ class KcfData {
   static const endDate = "Present";
 
   static const point1Part1 =
-      "Develop and maintain major features of KCF's mobile-first comprehensive machine health web app using ";
+      "Develop and maintain major features of KCF's comprehensive machine health web app using ";
   static const point1Part2 = ", ";
   static const point1Part3 = " / ";
   static const point1Part4 = " and ";
 
-  static const point2Part1 = "Build custom ";
-  static const point2Part2 =
-      ", UI elements and hooks for various pages, modals and tables throughout the software";
+  static const point2 =
+      "Build an issue management and remediation system with a streamlined process for capturing issues, facilitating conversations, and implementing recommended actions";
 
-  static const point3Part1 = "Implement and create ";
-  static const point3Part2 = " using ";
-  static const point3Part3 = " and ";
-  static const point3Part4 =
-      " to get, update and export multiple hardware's information";
+  static const point3Part1 =
+      "Lead a team of developers to build a new cross-platform mobile app using ";
+  static const point3Part2 =
+      " with a focus on issue remediation and hardware management";
 
   static const point4 =
-      "Communicate and collaborate with multi-disciplinary teams of engineers, designers and product managers to ensure thoughtful and coherent user experiences";
+      "Core member of a small select team that's building an extensive Design System / Component Library and coherent user experiences across multiple apps";
 }
 
 class MuleData {
@@ -116,6 +114,7 @@ class SectionTitleData {
 
 class TechData {
   static const react = "React";
+  static const reactNative = "React Native";
   static const css = "CSS";
   static const sass = "Sass";
   static const csharp = "C#";
@@ -170,6 +169,7 @@ class WorkData {
 
   // Titles
   static const softwareEngineer = "Software Engineer";
+  static const softwareEngineer2 = "Software Engineer II";
   static const capstone = "Capstone Project";
   static const cofounder = "Co-Founder";
 }
