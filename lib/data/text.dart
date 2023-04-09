@@ -44,7 +44,7 @@ class FooterData {
   static const contactPart5 = ".";
 
   static const copyright = "© 2023 by Mrigank Doshy";
-  static const version = "v1.0.2";
+  static const version = "v1.1.0";
 }
 
 class IntroData {
