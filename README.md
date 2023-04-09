@@ -18,8 +18,9 @@
         <img src="https://img.shields.io/github/v/release/mrigankdoshy/personal-website?color=blue&include_prereleases&sort=date&style=for-the-badge" alt="Release">
 </p>
 
-<!-- ![Portfolio](https://user-images.githubusercontent.com/32623983/170842714-41b4be8d-fddb-4e23-88a9-74330e4199e6.png) -->
-<img width="1680" alt="Website" src="https://user-images.githubusercontent.com/32623983/170842874-a4b772c5-b21f-4816-a37d-f5f3e9995c9f.png">
+<img width="1676" alt="Screenshot 2023-04-09 at 4 49 11 PM" src="https://user-images.githubusercontent.com/32623983/230795923-708be85c-d867-46c7-9349-dd437c308e2e.png">
+
+
 
 
 ## 🚀 Building and Running
