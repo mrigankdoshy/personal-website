@@ -94,20 +94,9 @@ class KcfTechnologies extends StatelessWidget {
   Widget _point2() {
     return WorkPoint(
       data: AutoSizeText.rich(
-        TextSpan(
+        const TextSpan(
+          text: KcfData.point2,
           style: TextStyles.point,
-          children: <TextSpan>[
-            const TextSpan(text: KcfData.point2Part1),
-            TextSpan(
-              text: TechData.styledComponents,
-              style: TextStyles.highlightSkill,
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  launch(Url.styledComponents);
-                },
-            ),
-            const TextSpan(text: KcfData.point2Part2),
-          ],
         ),
         maxLines: 3,
         group: pointGroup,
@@ -123,32 +112,14 @@ class KcfTechnologies extends StatelessWidget {
           children: <TextSpan>[
             const TextSpan(text: KcfData.point3Part1),
             TextSpan(
-              text: TechData.restfulApi,
+              text: TechData.reactNative,
               style: TextStyles.highlightSkill,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  launch(Url.restfulApi);
+                  launch(Url.reactNative);
                 },
             ),
             const TextSpan(text: KcfData.point3Part2),
-            TextSpan(
-              text: TechData.entityFramework,
-              style: TextStyles.highlightSkill,
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  launch(Url.entityFramework);
-                },
-            ),
-            const TextSpan(text: KcfData.point3Part3),
-            TextSpan(
-              text: TechData.dapper,
-              style: TextStyles.highlightSkill,
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  launch(Url.dapper);
-                },
-            ),
-            const TextSpan(text: KcfData.point3Part4),
           ],
         ),
         maxLines: 3,
