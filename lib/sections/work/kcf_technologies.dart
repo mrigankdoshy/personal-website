@@ -26,7 +26,7 @@ class KcfTechnologies extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         WorkTitle(
-          title: WorkData.softwareEngineer,
+          title: WorkData.softwareEngineer2,
           company: WorkData.kcf,
           url: Url.kcfTechnologies,
           group: titleGroup,
