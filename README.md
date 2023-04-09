@@ -10,7 +10,7 @@
 <p align="center">
    <img src="https://therealsujitk-vercel-badge.vercel.app/?app=mrigankdoshy&style=for-the-badge" />
    <a href="https://github.com/mrigankdoshy/personal-website/actions/workflows/ci.yml" target="_blank">
-    <img src="https://img.shields.io/github/workflow/status/mrigankdoshy/personal-website/CI?label=CI&logo=github&style=for-the-badge" alt="CI" />
+    <img src="https://img.shields.io/github/actions/workflow/status/mrigankdoshy/personal-website/ci.yml?label=CI&logo=github&style=for-the-badge" alt="CI" />
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
