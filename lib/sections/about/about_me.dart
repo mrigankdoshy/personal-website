@@ -159,8 +159,8 @@ class _AboutMeState extends State<AboutMe> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
             RecentTech(title: TechData.flutter),
+            RecentTech(title: TechData.reactNative),
             RecentTech(title: TechData.firebase),
-            RecentTech(title: TechData.csharp),
           ],
         ),
       ],
